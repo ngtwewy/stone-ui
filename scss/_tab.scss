@@ -1,0 +1,38 @@
+//
+// nav-tabs
+// --------------------------------------------------
+
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  display: block;
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  li {
+    float: left;
+    margin-bottom: -1px;
+    margin-right: 3px;
+    position: relative;
+    display: block;
+    a {
+      font-size: 14px;
+      position: relative;
+      display: block;
+      padding: 10px 15px;
+      background-color: #f8f8f8;
+      border: 1px solid #ddd;
+      border-radius: $stone-border-radius-sm $stone-border-radius-sm 0 0;
+    }
+  }
+  li.active a {
+    color: $stone-color-primary;
+    cursor: default;
+    background-color: #fff;
+    border-bottom-color: transparent;
+  }
+}

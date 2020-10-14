@@ -1,0 +1,56 @@
+//
+// Buttons
+// --------------------------------------------------
+
+// Base styles
+// --------------------------------------------------
+
+.btn {
+  display: inline-block;
+  margin-bottom: 0px;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  // border: 1px solid transparent;
+  border: 1px solid #d9d9d9;
+  border-radius: $stone-border-radius-sm;
+  padding: 3px 12px;
+  display: inline;
+  font-size: 14px;
+  color: rgba(0,0,0,.65);
+  &:not(.btn-default):not(.btn-danger):focus{
+    color: $stone-color-primary;
+    border-color: $stone-color-primary;
+  }
+}
+
+.btn:focus,
+.btn.focus,
+.btn:active:focus,
+.btn:active.focus,
+.btn.active:focus,
+.btn.active.focus {
+  outline: 0;
+  outline-width: 0px;
+}
+
+.btn-default {
+  color: #fff;
+  background-color: $stone-color-primary;
+  border-color: #1890ff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 0 rgba(0,0,0,.045);
+}
+
+
+.btn-danger{
+  color: #fff;
+  background-color: $stone-color-error;
+  border-color: #ff4d4f;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 0 rgba(0,0,0,.045);
+}

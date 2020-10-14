@@ -1,0 +1,23 @@
+//
+// 面包屑导航
+// --------------------------------------------------
+
+.breadcrumb {
+  list-style: none;
+  padding-left: 0px;
+  font-size: 15px;
+  position: relative;
+  overflow: hidden;
+  // border-radius: $stone-border-radius-base;
+  & > li {
+    // display: inline-block;
+    float: left;
+    + li:before {
+      padding: 0 6px;
+      content: "/";
+    }
+  }
+  > .active a {
+    color: $stone-color-primary;
+  }
+}

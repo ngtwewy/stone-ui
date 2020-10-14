@@ -1,0 +1,89 @@
+//
+// SCSS 变量
+// --------------------------------------------------
+
+/* 颜色变量 */
+
+/* 行为相关颜色 */
+$stone-color-primary: #1890ff;
+$stone-color-success: #4cd964;
+$stone-color-warning: #f0ad4e;
+$stone-color-error: #ff4d4f;
+
+/* 文字基本颜色 */
+$stone-text-color:#333;//基本色
+$stone-text-color-inverse:#fff;//反色
+$stone-text-color-grey:#999;//辅助灰色，如加载更多的提示信息
+$stone-text-color-placeholder: #808080;
+$stone-text-color-disable:#c0c0c0;
+
+/* 背景颜色 */
+$stone-bg-color:#ffffff;
+$stone-bg-color-grey:#f8f8f8;
+$stone-bg-color-hover:#f1f1f1;//点击状态颜色
+$stone-bg-color-mask:rgba(0, 0, 0, 0.4);//遮罩颜色
+
+/* 边框颜色 */
+$stone-border-color:#c8c7cc;
+
+/* 尺寸变量 */
+
+/* 文字尺寸 */
+$stone-font-size-sm:24px;
+$stone-font-size-base:28px;
+$stone-font-size-lg:32px;
+
+/* 图片尺寸 */
+$stone-img-size-sm:40px;
+$stone-img-size-base:52px;
+$stone-img-size-lg:80px;
+
+/* Border Radius */
+$stone-border-radius-sm: 4px;
+$stone-border-radius-base: 6px; //一般
+$stone-border-radius-lg: 12px;
+$stone-border-radius-circle: 50%;
+
+/* 水平间距 */
+$stone-spacing-row-sm: 10px;
+$stone-spacing-row-base: 20px;
+$stone-spacing-row-lg: 30px;
+
+/* 垂直间距 */
+$stone-spacing-col-sm: 8px;
+$stone-spacing-col-base: 16px;
+$stone-spacing-col-lg: 24px;
+
+/* 透明度 */
+$stone-opacity-disabled: 0.3; // 组件禁用态的透明度
+
+/* 文章场景相关 */
+$stone-color-title: #2C405A; // 文章标题颜色
+$stone-font-size-title:40px;
+$stone-color-subtitle: #555555; // 二级标题颜色
+$stone-font-size-subtitle:36px;
+$stone-color-paragraph: #3F536E; // 文章段落颜色
+$stone-font-size-paragraph:30px;
+
+
+/*  ADD BY ME  */
+/* 全局自定义按钮 */
+$custom-button-border-radius:2px;
+$custom-button-background: linear-gradient(140deg, #2f85fc 0%, #00ade4 100%), linear-gradient(#ff6b01, #ff6b01);
+
+@mixin bottom-line($color, $line: solid, $index: 0) {
+  content: '';
+  position: absolute;
+  z-index: $index;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px $line $color;
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+
+

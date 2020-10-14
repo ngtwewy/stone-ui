@@ -1,0 +1,26 @@
+/**
+ * Author: ngtwewy <62006464@qq.com>
+ * Author URI: http://javascript.net.cn
+ * Project URI: https://github.com/ngtwewy/snowland
+ * License: Apache Licence 2.0
+ * License URI: http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+@charset "utf-8";
+
+@import "_normalize.scss";
+@import "_variables.scss";
+@import "_font.scss";
+
+a{
+    text-decoration: none;
+    color: $stone-text-color;
+}
+
+@import "_breadcrumbs.scss";
+@import "_button.scss";
+@import "_pagination.scss";
+@import "_form.scss";
+@import "_tab.scss";
+@import "_dashboard.scss";
+

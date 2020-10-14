@@ -1,0 +1,205 @@
+//
+// 后台模板
+// --------------------------------------------------
+
+/**
+ * Author: ngtwewy <62006464@qq.com>
+ * Author URI: http://javascript.net.cn
+ * Project URI: https://github.com/ngtwewy/snowland
+ * License: Apache Licence 2.0
+ * License URI: http://www.apache.org/licenses/LICENSE-2.0
+ */
+
+body,
+html {
+  height: 100%;
+}
+
+.main-container {
+  height: 100%;
+  position: relative;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.siderbar {
+  width: 230px;
+  height: 100%;
+  overflow: hidden;
+  background-color: #1a1c35;
+  /* 左侧菜单 ------------------------------------ */
+  .siderbar-header {
+    height: 55px;
+    line-height: 55px;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    // border-bottom: 1px solid $stone-border-color;
+    // background: $stone-bg-color;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  ul.nav-list {
+    padding-left: 0px;
+    margin-left: 25px;
+    li {
+      list-style: none;
+      min-height: 50px;
+      line-height: 50px;
+      &,
+      & a {
+        color: #8989a1;
+        font-size: 14px;
+        // margin-left: 10px;
+      }
+      i {
+        font-size: 23px;
+        top: 3px;
+        margin-right: 18px;
+      }
+    }
+  }
+}
+
+/* 右侧内容 ------------------------------------ */
+/** 右侧 **/
+.panel-container {
+  background-color: $stone-bg-color-grey;
+  width: calc(100% - 230px);
+  .panel-header {
+    width: 100%;
+    height: 55px;
+    // border-bottom: 1px solid $stone-border-color;
+    background: $stone-bg-color;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    .panel-header-left {
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      a {
+        margin-left: 16px;
+        color: #777;
+        font-size: 13px;
+        i {
+          font-size: 23px;
+        }
+      }
+    }
+    .panel-header-right {
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      a {
+        margin-left: 40px;
+        color: #777;
+        font-size: 13px;
+        i {
+          font-size: 23px;
+        }
+      }
+      // a.nickname{
+      //     margin-left: 0px;
+      // }
+      .bell {
+        position: relative;
+        &.red::after {
+          content: "";
+          display: block;
+          width: 5px;
+          height: 5px;
+          border: 1px solid #fff;
+          border-radius: 50%;
+          background-color: red;
+          position: absolute;
+          top: 3px;
+          right: 3px;
+        }
+      }
+      .avatar {
+        display: flex;
+        align-items: center;
+        height: 35px;
+        line-height: 35px;
+        overflow: hidden;
+        img {
+          width: 35px;
+          height: 35px;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        span {
+          margin-left: 6px;
+        }
+        i {
+          font-size: 13px;
+          margin-left: 5px;
+          margin-right: 20px;
+        }
+      }
+    }
+
+
+  }
+  .panel-body{
+    height: calc(100% - 55px);
+    overflow-y: auto;
+    .panel-body-container {
+      padding: 0px 200px 30px 30px;
+    }
+  }
+}
+
+
+//
+// 面板模块
+// --------------------------------------------------
+.panel-box{
+  padding: 15px 30px 50px 30px;
+  background-color: #fff;
+  border: 1px solid #ebedf0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+
+//
+// 欢迎模块
+// --------------------------------------------------
+.panel-show{
+  width: 100%;
+  min-height: 150px;
+  background-color: #ebeefd;
+  border-radius: $stone-border-radius-lg;
+  overflow: hidden;
+  padding-bottom: 20px;
+  .welcome-title{
+    font-size: 22px;
+    padding: 15px 20px 0px 20px;
+  }
+  .welcome-description{
+    font-size: 13px;
+    width: 500px;
+    padding: 20px 20px 0px 20px;
+  }
+  .btn{
+    margin: 15px 20px 0px 20px;
+  }
+}
+
+
+//
+// 粘结顶部
+// --------------------------------------------------
+.position-sticky{
+  position: -webkit-sticky; /* safari 浏览器 */
+  position: sticky; /* 其他浏览器 */
+  top: 0px;
+}
+

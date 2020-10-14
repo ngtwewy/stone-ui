@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="../assets/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="siderbar">
+            <div class="siderbar-header">
+                <h1>RAS-Admin</h1>
+            </div>
+            <div id="nav-wrapper">
+                <ul class="nav-list">
+                    <li>
+                        <a href="javascript:;">
+                            <span class="arr-right"></span>
+                            <i class="iconfont">&#xefe6;</i>
+                            <span>系统管理</span>
+                        </a>
+                        <ul class="nav-list" style="display: none;">
+                            <li>
+                                <i class="iconfont">&#xf2e5;</i>
+                                <a href=":;">系统首页</a>
+                            </li>
+                            <li>
+                                <i class="iconfont">&#xf2e5;</i>
+                                <a href=":;">菜单管理</a>
+                            </li>
+                            <li>
+                                <i class="iconfont">&#xf2e5;</i>
+                                <a href=":;">系统设置</a>
+                             </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="arr-right"></span>
+                            <i class="iconfont">&#xf1ea;</i>
+                            <span>系统管理22</span>
+                        </a>
+                        <ul class="nav-list">
+                            <li>
+                                <i class="iconfont">&#xf2ea;</i>
+                                <a href=":;">系统首页</a>
+                            </li>
+                            <li>
+                                <i class="iconfont">&#xefeb;</i>
+                                <a href=":;">菜单管理</a>
+                            </li>
+                            <li>
+                                <i class="iconfont">&#xefee;</i>
+                                <a href=":;">系统设置</a>
+                             </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="arr-right"></span>
+                            <i class="iconfont">&#xf15e;</i>
+                            <span>退出</span>
+                        </a>
+                    </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- <div class="sidebar-copyright">
+                <a href="//restfulapi.cn" target="_blank">API 罐头</a>
+            </div> -->
+        </div>
+        <div class="panel-container">
+            <div class="panel-header position-sticky">
+                <div class="panel-header-left">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xef46;</i>
+                    </a>
+                </div>
+                <div class="panel-header-right">
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xf407;</i>
+                    </a>
+                    <a href="javascript:;">
+                        <i class="iconfont">&#xefc1;</i>
+                    </a>
+                    <a class="bell red" href="javascript:;">
+                        <i class="iconfont">&#xf392;</i>
+                    </a>
+                    <a class="avatar" href="javascript:;">
+                        <img src="../assets/images/avatar.jpg" alt="">
+                        <span>进击的石头</span>
+                        <i class="iconfont">&#xefa9;</i>
+                    </a>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="panel-body-container">
+                    <ul class="breadcrumb">
+                        <li><a href="javascript:;">首页</a></li>
+                        <li><a href="javascript:;">二级分类</a></li>
+                        <li class="active"><a href="javascript:;">当前分类</a></li>
+                    </ul>
+    
+                    <div class="panel-box">
+                        <ul class="nav-tabs">
+                            <li>
+                                <a href="javascript:;">用户管理</a>
+                            </li>
+                            <li class="active">
+                                <a href="javascript:;">添加用户</a>
+                            </li>
+                        </ul>
+
+                        <!-- <div style="clear: both;"></div> -->
+
+                        <form class="ajax-form" action="/user/user/editaction" method="post">
+                            <div class="form-group">
+                                <label for="input-name">昵称</label>
+                                <div>
+                                    <input type="text" class="form-control" name="nickname" value="B个GL"> 
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="input-name">账号</label>
+                                <div>
+                                    <input type="text" class="form-control" name="username" value="">
+                                    <p class="help-block">账号可以用来登录，请谨慎修改</p>
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="input-name">手机号</label>
+                                <div>
+                                    <input type="text" class="form-control" name="mobile" value="18812341234">
+                                    <p class="help-block">手机号可以用来登录，请谨慎修改</p>
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="input-name">邮箱</label>
+                                <div>
+                                    <input type="text" class="form-control" name="email" value="">
+                                    <p class="help-block">邮箱可以用来登录，请谨慎修改</p>
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="input-description">个性签名</label>
+                                <div>
+                                    <textarea class="form-control" name="signature" rows="3"></textarea>
+                                </div>
+                            </div>
+        
+                            <div class="form-group thumbnail-container">
+                                <label>头像</label>
+                                <div>
+                                    <input type="hidden" name="avatar" value="" class="input-hidden"/>
+                                    <input type="file" name="file" data-url='/asset/image/uploadthumbnail'>
+                                    <button type="button" class="btn btn-sm btn-info margin-bottom-10 upload-button">点击上传缩略图</button> 
+                                </div>
+                                <button type="button" class="btn btn-danger" >删除</button>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="input-name">角色</label>
+                                <div>
+                                    <select class="form-control" name="type">
+                                        <option value="3"  >二级用户</option>
+                                        <option value="2" selected >普通用户</option>
+                                        <option value="1"  >超级管理员</option>
+                                    </select>                                                       
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <label for="input-name">黑名单</label>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="is_black" value="1" > 拉黑
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="is_black" value="0" checked> 正常
+                                    </label>                            
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="input-name">账户状态</label>
+                                <div>
+                                    <label>
+                                        <input type="radio" name="is_active" value="1" checked> 激活
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="is_active" value="0" > 未激活
+                                    </label>                            
+                                </div>
+                            </div>
+        
+                            <div class="form-group">
+                                <input type="hidden" name="id" value="52">
+                                <button type="submit" class="btn btn-primary ajax-submit">保存</button>
+                                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+                            </div>
+                        </form>
+
+                        <a class="btn" href="#">查看更多</a>
+                        <a class="btn btn-default" href="#" role="button">Link</a>
+                        <button class="btn btn-default" type="submit">Button</button>
+                        <button class="btn btn-danger" type="submit">Button</button>
+
+                    </div><!-- ./panel-box -->
+                    
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</body>
+
+</html>
