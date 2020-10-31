@@ -222,7 +222,12 @@ th {
 
 body,
 html {
-  height: 100%; }
+  height: 100%;
+  font-size: 13px;
+  color: #333; }
+
+.iconfont.hide {
+  display: none; }
 
 .main-container {
   height: 100%;
@@ -233,7 +238,7 @@ html {
   justify-content: space-between; }
 
 .siderbar {
-  width: 230px;
+  width: 180px;
   height: 100%;
   overflow: hidden;
   background-color: #1a1c35;
@@ -244,7 +249,6 @@ html {
     font-size: 12px;
     text-align: center;
     color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: center;
     align-items: center; }
@@ -253,22 +257,29 @@ html {
     margin-left: 25px; }
     .siderbar ul.nav-list li {
       list-style: none;
-      min-height: 50px;
-      line-height: 50px; }
+      min-height: 38px;
+      line-height: 38px; }
       .siderbar ul.nav-list li,
       .siderbar ul.nav-list li a {
-        color: #8989a1;
-        font-size: 14px; }
+        color: #a6a6c2;
+        font-size: 14px;
+        display: block; }
       .siderbar ul.nav-list li i {
-        font-size: 23px;
-        top: 3px;
-        margin-right: 18px; }
+        font-size: 15px;
+        top: 1px;
+        margin-right: 5px; }
+        .siderbar ul.nav-list li i.arrow {
+          float: right;
+          margin-right: 10px; }
+        .siderbar ul.nav-list li i.arrow.up {
+          transform: rotate(180deg); }
 
 /* 右侧内容 ------------------------------------ */
 /** 右侧 **/
 .panel-container {
-  background-color: #f8f8f8;
-  width: calc(100% - 230px); }
+  background-color: #eeeeee;
+  width: calc(100% - 180px);
+  position: relative; }
   .panel-container .panel-header {
     width: 100%;
     height: 55px;
@@ -276,6 +287,9 @@ html {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: space-between; }
+    .panel-container .panel-header i {
+      color: #a6a6c2;
+      font-size: 18px; }
     .panel-container .panel-header .panel-header-left {
       height: 100%;
       display: flex;
@@ -285,8 +299,6 @@ html {
         margin-left: 16px;
         color: #777;
         font-size: 13px; }
-        .panel-container .panel-header .panel-header-left a i {
-          font-size: 23px; }
     .panel-container .panel-header .panel-header-right {
       height: 100%;
       display: flex;
@@ -296,8 +308,6 @@ html {
         margin-left: 40px;
         color: #777;
         font-size: 13px; }
-        .panel-container .panel-header .panel-header-right a i {
-          font-size: 23px; }
       .panel-container .panel-header .panel-header-right .bell {
         position: relative; }
         .panel-container .panel-header .panel-header-right .bell.red::after {
@@ -310,7 +320,7 @@ html {
           background-color: red;
           position: absolute;
           top: 3px;
-          right: 3px; }
+          right: 2px; }
       .panel-container .panel-header .panel-header-right .avatar {
         display: flex;
         align-items: center;
@@ -330,9 +340,10 @@ html {
           margin-right: 20px; }
   .panel-container .panel-body {
     height: calc(100% - 55px);
-    overflow-y: auto; }
+    overflow-y: auto;
+    position: relative; }
     .panel-container .panel-body .panel-body-container {
-      padding: 0px 30px 30px 30px; }
+      padding: 0px 15px 15px 15px; }
 
 .panel-box {
   padding: 15px 30px 50px 30px;

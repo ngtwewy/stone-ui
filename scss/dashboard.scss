@@ -21,6 +21,12 @@
 body,
 html {
   height: 100%;
+  font-size: 13px;
+  color: #333;
+}
+
+.iconfont.hide{
+  display: none;
 }
 
 .main-container {
@@ -33,7 +39,7 @@ html {
 }
 
 .siderbar {
-  width: 230px;
+  width: 180px;
   height: 100%;
   overflow: hidden;
   background-color: #1a1c35;
@@ -44,9 +50,7 @@ html {
     font-size: 12px;
     text-align: center;
     color: #fff;
-    // border-bottom: 1px solid $stone-border-color;
-    // background: $stone-bg-color;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+    // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,18 +60,26 @@ html {
     margin-left: 25px;
     li {
       list-style: none;
-      min-height: 50px;
-      line-height: 50px;
+      min-height: 38px;
+      line-height: 38px;
       &,
       & a {
-        color: #8989a1;
+        color: #a6a6c2;
         font-size: 14px;
+        display: block;
         // margin-left: 10px;
       }
       i {
-        font-size: 23px;
-        top: 3px;
-        margin-right: 18px;
+        font-size: 15px;
+        top: 1px;
+        margin-right: 5px;
+        &.arrow{
+          float: right;
+          margin-right: 10px;
+        }
+        &.arrow.up{
+          transform: rotate(180deg);
+        }
       }
     }
   }
@@ -77,7 +89,8 @@ html {
 /** 右侧 **/
 .panel-container {
   background-color: $stone-bg-color-grey;
-  width: calc(100% - 230px);
+  width: calc(100% - 180px);
+  position: relative;
   .panel-header {
     width: 100%;
     height: 55px;
@@ -86,6 +99,10 @@ html {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: space-between;
+    i {
+      color: #a6a6c2;
+      font-size: 18px;
+    }
     .panel-header-left {
       height: 100%;
       display: flex;
@@ -95,9 +112,7 @@ html {
         margin-left: 16px;
         color: #777;
         font-size: 13px;
-        i {
-          font-size: 23px;
-        }
+        
       }
     }
     .panel-header-right {
@@ -109,13 +124,7 @@ html {
         margin-left: 40px;
         color: #777;
         font-size: 13px;
-        i {
-          font-size: 23px;
-        }
       }
-      // a.nickname{
-      //     margin-left: 0px;
-      // }
       .bell {
         position: relative;
         &.red::after {
@@ -128,7 +137,7 @@ html {
           background-color: red;
           position: absolute;
           top: 3px;
-          right: 3px;
+          right: 2px;
         }
       }
       .avatar {
@@ -159,10 +168,12 @@ html {
   .panel-body{
     height: calc(100% - 55px);
     overflow-y: auto;
+    position: relative;
     .panel-body-container {
-      padding: 0px 30px 30px 30px;
+      padding: 0px 15px 15px 15px;
     }
   }
+
 }
 
 

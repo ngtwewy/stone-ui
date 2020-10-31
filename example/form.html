@@ -13,50 +13,50 @@
     <div class="main-container">
         <div class="siderbar">
             <div class="siderbar-header">
-                <h1>RAS-Admin</h1>
+                <h2>管理面板</h2>
             </div>
             <div id="nav-wrapper">
                 <ul class="nav-list">
                     <li>
-                        <a href="javascript:;">
+                        <a href="index.html">
                             <span class="arr-right"></span>
                             <i class="iconfont">&#xefe6;</i>
-                            <span>系统管理</span>
+                            <span>系统首页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="arr-right"></span>
+                            <i class="iconfont">&#xf1ea;</i>
+                            <span>组件</span>
+                            <i class="iconfont arrow">&#xef22;</i>
                         </a>
                         <ul class="nav-list" style="display: none;">
                             <li>
-                                <i class="iconfont">&#xf2e5;</i>
-                                <a href="javascript:;">系统首页</a>
+                                <a href="form.html">
+                                    <i class="iconfont">&#xf2ea;</i><span>表单</span>
+                                </a>
                             </li>
                             <li>
-                                <i class="iconfont">&#xf2e5;</i>
-                                <a href="javascript:;">菜单管理</a>
+                                <a href="table.html">
+                                    <i class="iconfont">&#xefee;</i><span>表格</span>
+                                </a>
                             </li>
-                            <li>
-                                <i class="iconfont">&#xf2e5;</i>
-                                <a href="javascript:;">系统设置</a>
-                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:;">
                             <span class="arr-right"></span>
                             <i class="iconfont">&#xf1ea;</i>
-                            <span>系统管理22</span>
+                            <span>模板</span>
+                            <i class="iconfont arrow">&#xef22;</i>
                         </a>
-                        <ul class="nav-list">
+                        <ul class="nav-list" style="display: none;">
                             <li>
-                                <i class="iconfont">&#xf2ea;</i>
-                                <a href="javascript:;">系统首页</a>
+                                <a href="login.html">
+                                    <i class="iconfont">&#xf2ea;</i><span>登录模板</span>
+                                </a>
                             </li>
-                            <li>
-                                <i class="iconfont">&#xefeb;</i>
-                                <a href="javascript:;">菜单管理</a>
-                            </li>
-                            <li>
-                                <i class="iconfont">&#xefee;</i>
-                                <a href="javascript:;">系统设置</a>
-                             </li>
                         </ul>
                     </li>
                     <li>
@@ -66,14 +66,12 @@
                             <span>退出</span>
                         </a>
                     </li>
-                    
-                    
+
+
                 </ul>
             </div>
-            <!-- <div class="sidebar-copyright">
-                <a href="//restfulapi.cn" target="_blank">API 罐头</a>
-            </div> -->
-        </div>
+        </div><!-- siderbar -->
+
         <div class="panel-container">
             <div class="panel-header position-sticky">
                 <div class="panel-header-left">
@@ -97,7 +95,8 @@
                         <i class="iconfont">&#xefa9;</i>
                     </a>
                 </div>
-            </div>
+            </div><!--panel-header-->
+
             <div class="panel-body">
                 <div class="panel-body-container">
                     <ul class="breadcrumb">
@@ -107,8 +106,8 @@
                                 <span>首页</span>
                             </a>
                         </li>
-                        <li><a href="javascript:;">二级分类</a></li>
-                        <li class="active"><a href="javascript:;">当前分类</a></li>
+                        <li><a href="javascript:;">组件</a></li>
+                        <li class="active"><a href="javascript:;">表单</a></li>
                     </ul>
     
                     <div class="panel-box">
@@ -203,57 +202,13 @@
                             <button class="btn btn-default" type="submit">Button</button>
                             <button class="btn btn-danger" type="submit">Button</button>
                         </div>
-                        
-                        <!-- 分页 -->
-                        <ul class="pagination">
-                            <li class="disabled page-item">
-                                <a class="page-link" href="#" aria-label="Previous"> 
-                                    <span aria-hidden="true">上一页</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item"><a class="page-link">1</a></li>
-                            <li class="page-item active"><a class="page-link" href="/?page=2">2</a></li>
-                            <li class="page-item"><a class="page-link" href="/?page=3">3</a></li>
-                            <li class="page-item"><a class="page-link" href="/?page=4">4</a></li>
-                            <li class="page-item"><a class="page-link" href="/?page=5">5678</a></li>
-                            <li class="page-item"><a class="page-link" href="/?page=4">4677</a></li>
-                            <li class="page-item"><a class="page-link" href="/?page=5">5788</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="/?page=2" aria-label="Next">
-                                    <span aria-hidden="true">下一页</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-                        <ul class="pagination nav">
-                            <li class="disabled page-item">
-                                <a class="page-link" href="#" aria-label="Previous"> 
-                                    <span aria-hidden="true">上一页</span>
-                                    <span class="sr-only">Previous</span>
-                                </a>
-                            </li>
-                            <li class="page-item active"><a class="page-link">1</a></li>
-                            <li class="page-item"><a class="page-link" href="/?page=2">2</a></li>
-                            <li class="page-item"><a class="page-link" href="/?page=3">3</a></li>
-                            <li class="page-item"><a class="page-link" href="/?page=4">4</a></li>
-                            <li class="page-item"><a class="page-link" href="/?page=5">5</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="/?page=2" aria-label="Next">
-                                    <span aria-hidden="true">下一页</span>
-                                    <span class="sr-only">Next</span>
-                                </a>
-                            </li>
-                        </ul>
-
                     </div><!-- ./panel-box -->
-                    
                 </div>
-            </div>
+            </div><!--panel-body-->
+        </div><!--panel-container-->
 
-
-        </div>
     </div>
+    <script src="../assets/javascripts/sider-nav.js"></script>
 </body>
 
 </html>

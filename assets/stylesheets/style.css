@@ -371,7 +371,8 @@ a {
 .form-group {
   margin-bottom: 15px;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  clear: both; }
   .form-group label {
     font-size: 14px;
     display: inline-block;
@@ -412,6 +413,39 @@ a {
     margin-top: 35px; }
   .form-group:last-child {
     margin-left: 95px; }
+
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 20px;
+  margin-bottom: 3px; }
+  .table td,
+  .table th {
+    position: static;
+    display: table-cell;
+    text-align: left;
+    float: none; }
+  .table > thead > tr > th,
+  .table > thead > tr > td,
+  .table > tbody > tr > th,
+  .table > tbody > tr > td,
+  .table > tfoot > tr > th,
+  .table > tfoot > tr > td {
+    padding: 8px;
+    line-height: 24px;
+    vertical-align: top;
+    border: 1px solid #ddd; }
+  .table > thead > tr:hover,
+  .table > tbody > tr:hover,
+  .table > tfoot > tr:hover {
+    background-color: #f5f5f5; }
+  .table > thead > tr > th {
+    vertical-align: bottom;
+    border-top: 1px solid #ddd !important;
+    border-bottom: 2px solid #ddd; }
+  .table > thead:first-child > tr:first-child > th,
+  .table > thead:first-child > tr:first-child > td {
+    border-top: 0; }
 
 .nav-tabs {
   border-bottom: 1px solid #ddd;

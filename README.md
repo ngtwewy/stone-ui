@@ -16,11 +16,11 @@
 node-sass --watch -r ./scss -o ./assets/stylesheets
 ```
 ```
-browser-sync start --server --files "assets/*.*, assets/stylesheets, assets/images, example"
+browser-sync start --server --files "assets/javascript, assets/stylesheets, assets/images, example"
 ```
 
 ## 作者信息
-ngtwewy 62006464@qq.com
+ngtwewy <62006464@qq.com>
 
 主页 http://javascript.net.cn
 
