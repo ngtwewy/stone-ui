@@ -101,7 +101,12 @@
             <div class="panel-body">
                 <div class="panel-body-container">
                     <ul class="breadcrumb">
-                        <li><a href="javascript:;">首页</a></li>
+                        <li>
+                            <a href="javascript:;">
+                                <i class="iconfont">&#xf07b;</i>
+                                <span>首页</span>
+                            </a>
+                        </li>
                         <li><a href="javascript:;">二级分类</a></li>
                         <li class="active"><a href="javascript:;">当前分类</a></li>
                     </ul>
@@ -121,40 +126,30 @@
                         <form class="ajax-form" action="/user/user/editaction" method="post">
                             <div class="form-group">
                                 <label for="input-name">昵称</label>
-                                <div>
-                                    <input type="text" class="form-control" name="nickname" value="B个GL"> 
-                                </div>
+                                <input type="text" class="form-control" name="nickname" value="B个GL"> 
                             </div>
         
                             <div class="form-group">
                                 <label for="input-name">账号</label>
-                                <div>
-                                    <input type="text" class="form-control" name="username" value="">
-                                    <p class="help-block">账号可以用来登录，请谨慎修改</p>
-                                </div>
+                                <input type="text" class="form-control" name="username" value="">
+                                <p class="help-block">账号可以用来登录，请谨慎修改</p>
                             </div>
         
                             <div class="form-group">
                                 <label for="input-name">手机号</label>
-                                <div>
-                                    <input type="text" class="form-control" name="mobile" value="18812341234">
-                                    <p class="help-block">手机号可以用来登录，请谨慎修改</p>
-                                </div>
+                                <input type="text" class="form-control" name="mobile" value="18812341234">
+                                <p class="help-block">手机号可以用来登录，请谨慎修改</p>
                             </div>
         
                             <div class="form-group">
                                 <label for="input-name">邮箱</label>
-                                <div>
-                                    <input type="text" class="form-control" name="email" value="">
-                                    <p class="help-block">邮箱可以用来登录，请谨慎修改</p>
-                                </div>
+                                <input type="text" class="form-control" name="email" value="">
+                                <p class="help-block">邮箱可以用来登录，请谨慎修改</p>
                             </div>
         
                             <div class="form-group">
-                                <label for="input-description">个性签名</label>
-                                <div>
-                                    <textarea class="form-control" name="signature" rows="3"></textarea>
-                                </div>
+                                <label for="input-name">个性签名</label>
+                                <textarea class="form-control" name="signature" rows="3"></textarea>
                             </div>
         
                             <div class="form-group thumbnail-container">
@@ -162,99 +157,94 @@
                                 <div>
                                     <input type="hidden" name="avatar" value="" class="input-hidden"/>
                                     <input type="file" name="file" data-url='/asset/image/uploadthumbnail'>
-                                    <button type="button" class="btn btn-sm btn-info margin-bottom-10 upload-button">点击上传缩略图</button> 
+                                    <button type="button" class="btn btn-sm btn-info upload-button">点击上传缩略图</button> 
                                 </div>
                                 <button type="button" class="btn btn-danger" >删除</button>
                             </div>
         
                             <div class="form-group">
                                 <label for="input-name">角色</label>
-                                <div>
-                                    <select class="form-control" name="type">
-                                        <option value="3"  >二级用户</option>
-                                        <option value="2" selected >普通用户</option>
-                                        <option value="1"  >超级管理员</option>
-                                    </select>                                                       
-                                </div>
+                                <select class="form-control" name="type">
+                                    <option value="3"  >二级用户</option>
+                                    <option value="2" selected >普通用户</option>
+                                    <option value="1"  >超级管理员</option>
+                                </select>
                             </div>
         
                             <div class="form-group">
                                 <label for="input-name">黑名单</label>
-                                <div>
-                                    <label>
-                                        <input type="radio" name="is_black" value="1" > 拉黑
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="is_black" value="0" checked> 正常
-                                    </label>                            
-                                </div>
+                                <label>
+                                    <input type="radio" name="is_black" value="1" > 拉黑
+                                </label>
+                                <label>
+                                    <input type="radio" name="is_black" value="0" checked> 正常
+                                </label>
                             </div>
                             
                             <div class="form-group">
                                 <label for="input-name">账户状态</label>
-                                <div>
-                                    <label>
-                                        <input type="radio" name="is_active" value="1" checked> 激活
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="is_active" value="0" > 未激活
-                                    </label>                            
-                                </div>
+                                <label>
+                                    <input type="radio" name="is_active" value="1" checked> 激活
+                                </label>
+                                <label>
+                                    <input type="radio" name="is_active" value="0" > 未激活
+                                </label>
                             </div>
         
                             <div class="form-group">
                                 <input type="hidden" name="id" value="52">
-                                <button type="submit" class="btn btn-primary ajax-submit">保存</button>
-                                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
+                                <button type="submit" class="btn btn-default ajax-submit">保存</button>
                             </div>
                         </form>
 
-                        <a class="btn" href="#">查看更多</a>
-                        <a class="btn btn-default" href="#" role="button">Link</a>
-                        <button class="btn btn-default" type="submit">Button</button>
-                        <button class="btn btn-danger" type="submit">Button</button>
+                        <div>
+                            <a class="btn" href="#">查看更多</a>
+                            <a class="btn btn-default" href="#" role="button">Link</a>
+                            <button class="btn btn-default" type="submit">Button</button>
+                            <button class="btn btn-danger" type="submit">Button</button>
+                        </div>
                         
-    <!-- 分页 -->
-    <ul class="pagination">
-        <li class="disabled page-item">
-            <a class="page-link" href="#" aria-label="Previous"> 
-                <span aria-hidden="true">上一页</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        <li class="page-item"><a class="page-link">1</a></li>
-        <li class="page-item active"><a class="page-link" href="/?page=2">2</a></li>
-        <li class="page-item"><a class="page-link" href="/?page=3">3</a></li>
-        <li class="page-item"><a class="page-link" href="/?page=4">4</a></li>
-        <li class="page-item"><a class="page-link" href="/?page=5">5678</a></li>
-        <li class="page-item"><a class="page-link" href="/?page=4">4677</a></li>
-        <li class="page-item"><a class="page-link" href="/?page=5">5788</a></li>
-        <li class="page-item">
-            <a class="page-link" href="/?page=2" aria-label="Next">
-                <span aria-hidden="true">下一页</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
-    </ul>
-    <ul class="pagination nav">
-        <li class="disabled page-item">
-            <a class="page-link" href="#" aria-label="Previous"> 
-                <span aria-hidden="true">上一页</span>
-                <span class="sr-only">Previous</span>
-            </a>
-        </li>
-        <li class="page-item active"><a class="page-link">1</a></li>
-        <li class="page-item"><a class="page-link" href="/?page=2">2</a></li>
-        <li class="page-item"><a class="page-link" href="/?page=3">3</a></li>
-        <li class="page-item"><a class="page-link" href="/?page=4">4</a></li>
-        <li class="page-item"><a class="page-link" href="/?page=5">5</a></li>
-        <li class="page-item">
-            <a class="page-link" href="/?page=2" aria-label="Next">
-                <span aria-hidden="true">下一页</span>
-                <span class="sr-only">Next</span>
-            </a>
-        </li>
-    </ul>
+                        <!-- 分页 -->
+                        <ul class="pagination">
+                            <li class="disabled page-item">
+                                <a class="page-link" href="#" aria-label="Previous"> 
+                                    <span aria-hidden="true">上一页</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link">1</a></li>
+                            <li class="page-item active"><a class="page-link" href="/?page=2">2</a></li>
+                            <li class="page-item"><a class="page-link" href="/?page=3">3</a></li>
+                            <li class="page-item"><a class="page-link" href="/?page=4">4</a></li>
+                            <li class="page-item"><a class="page-link" href="/?page=5">5678</a></li>
+                            <li class="page-item"><a class="page-link" href="/?page=4">4677</a></li>
+                            <li class="page-item"><a class="page-link" href="/?page=5">5788</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="/?page=2" aria-label="Next">
+                                    <span aria-hidden="true">下一页</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="pagination nav">
+                            <li class="disabled page-item">
+                                <a class="page-link" href="#" aria-label="Previous"> 
+                                    <span aria-hidden="true">上一页</span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link">1</a></li>
+                            <li class="page-item"><a class="page-link" href="/?page=2">2</a></li>
+                            <li class="page-item"><a class="page-link" href="/?page=3">3</a></li>
+                            <li class="page-item"><a class="page-link" href="/?page=4">4</a></li>
+                            <li class="page-item"><a class="page-link" href="/?page=5">5</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="/?page=2" aria-label="Next">
+                                    <span aria-hidden="true">下一页</span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </li>
+                        </ul>
 
                     </div><!-- ./panel-box -->
                     

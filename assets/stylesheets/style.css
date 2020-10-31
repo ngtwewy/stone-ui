@@ -225,15 +225,21 @@ a {
   color: #333; }
 
 .breadcrumb {
+  padding: 15px 30px;
+  background-color: #fff;
+  border: 1px solid #ebedf0;
   list-style: none;
-  padding-left: 0px;
   font-size: 15px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  border-radius: 6px; }
+  .breadcrumb:nth-child(1) i {
+    color: #cfd3d4;
+    margin-right: 5px; }
   .breadcrumb > li {
     float: left; }
     .breadcrumb > li + li:before {
-      padding: 0 6px;
+      padding: 0 8px;
       content: "/"; }
   .breadcrumb > .active a {
     color: #1890ff; }
@@ -363,56 +369,49 @@ a {
   display: none; }
 
 .form-group {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center; }
   .form-group label {
     font-size: 14px;
     display: inline-block;
     max-width: 100%;
-    margin-bottom: 6px;
+    width: 80px;
+    margin-right: 15px;
     font-weight: normal; }
-
-.form-control {
-  display: block;
-  width: 50%;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857;
-  color: #555555;
-  background-color: #fff;
-  background-image: none;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-  -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
-
-.help-block {
-  display: block;
-  font-size: 13px;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  color: #737373; }
-
-input,
-button,
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit; }
-
-input {
-  line-height: normal; }
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: inherit;
-  font: inherit;
-  margin: 0; }
+    .form-group label:nth-child(1) {
+      text-align: right; }
+  .form-group input,
+  .form-group optgroup,
+  .form-group select,
+  .form-group textarea {
+    color: inherit;
+    font: inherit; }
+  .form-group .form-control {
+    display: block;
+    width: 260px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    box-sizing: content-box; }
+  .form-group .help-block {
+    display: block;
+    font-size: 13px;
+    color: #737373;
+    margin-left: 20px; }
+  .form-group:nth-child(1) {
+    margin-top: 35px; }
+  .form-group:last-child {
+    margin-left: 95px; }
 
 .nav-tabs {
   border-bottom: 1px solid #ddd;

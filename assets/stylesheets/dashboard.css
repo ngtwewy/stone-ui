@@ -332,7 +332,7 @@ html {
     height: calc(100% - 55px);
     overflow-y: auto; }
     .panel-container .panel-body .panel-body-container {
-      padding: 0px 200px 30px 30px; }
+      padding: 0px 30px 30px 30px; }
 
 .panel-box {
   padding: 15px 30px 50px 30px;

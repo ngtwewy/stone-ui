@@ -4,13 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../assets/stylesheets/style.css">
     <link rel="stylesheet" href="../assets/stylesheets/login.css">
 </head>
 
 <body>
-    
+    <div class="videocontainer">
+        <video 
+        class="fullscreenvideo"
+        id="v1" 
+        playsinline=""
+        autoplay="true" 
+        muted="" 
+        loop="true">
+            <source src="https://cloud.restfulapi.cn/video/bg-video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <script>
+        var video= document.getElementById('v1');
+        // video.playbackRate = 0.5;
+    </script>
+
+    <div class="login">
+        <form class="loginform" method="post" action="/login" onsubmit="return false;">
+            <div class="logo">RESTful API Seed</div>
+            <div class="line">
+                <input class="inputtxt" type="text" value="" name="username" placeholder="账号">
+                <div class="validform-checktip validform-right"></div>
+            </div>
+            <div class="line">
+                <input class="inputtxt" type="password" name="password" value="" placeholder="密码">
+                <div class="validform-checktip validform-wrong">错误提示</div>
+            </div>
+            <div class="login_btn">
+                <input id="login-button" value="登录" type="submit">
+            </div>
+            <a class="resetpw" href="#" target="_blank">忘记密码?</a>
+        </form>
+    </div>
+
 </body>
 
 </html>

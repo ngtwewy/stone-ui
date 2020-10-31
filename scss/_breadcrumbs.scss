@@ -3,17 +3,26 @@
 // --------------------------------------------------
 
 .breadcrumb {
+  padding: 15px 30px;
+  background-color: #fff;
+  border: 1px solid #ebedf0;
   list-style: none;
-  padding-left: 0px;
+  // padding-left: 0px;
   font-size: 15px;
   position: relative;
   overflow: hidden;
-  // border-radius: $stone-border-radius-base;
+  border-radius: $stone-border-radius-base;
+  &:nth-child(1){
+    i{
+      color: #cfd3d4;
+      margin-right: 5px;
+    }
+  }
   & > li {
     // display: inline-block;
     float: left;
     + li:before {
-      padding: 0 6px;
+      padding: 0 8px;
       content: "/";
     }
   }
