@@ -258,7 +258,7 @@ a {
   border-radius: 4px;
   padding: 3px 12px;
   display: inline;
-  font-size: 14px;
+  font-size: 5px;
   color: rgba(0, 0, 0, 0.65); }
   .btn:not(.btn-default):not(.btn-danger):focus {
     color: #1890ff;
@@ -286,6 +286,10 @@ a {
   border-color: #ff4d4f;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045); }
+
+.btn-big {
+  font-size: 14px;
+  padding: 8px 25px; }
 
 .pagination {
   display: inline-block;
@@ -446,6 +450,61 @@ a {
   .table > thead:first-child > tr:first-child > th,
   .table > thead:first-child > tr:first-child > td {
     border-top: 0; }
+
+.thumbnail-container {
+  display: flex;
+  align-items: flex-start; }
+  .thumbnail-container i {
+    font-size: 12px; }
+  .thumbnail-container label {
+    margin-top: 3px; }
+  .thumbnail-container .thumbnail-panel .project-thumbnail {
+    width: 200px;
+    height: 170px;
+    margin: 10px 0px 0px 0px;
+    position: relative; }
+    .thumbnail-container .thumbnail-panel .project-thumbnail img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 4px; }
+    .thumbnail-container .thumbnail-panel .project-thumbnail button {
+      border: 0px;
+      background-color: transparent;
+      color: #ff4d4f; }
+  .thumbnail-container input {
+    display: none; }
+
+.image-list-container {
+  display: flex;
+  align-items: flex-start; }
+  .image-list-container label {
+    margin-top: 5px; }
+  .image-list-container .image-item {
+    clear: both;
+    margin: 0px 0px 10px 0px;
+    float: left;
+    display: flex;
+    align-items: center; }
+    .image-list-container .image-item input {
+      width: 260px;
+      float: left;
+      margin-right: 5px; }
+    .image-list-container .image-item img {
+      width: 34px;
+      height: 34px;
+      float: left;
+      display: block;
+      object-fit: cover;
+      border-radius: 3px;
+      margin-right: 5px; }
+    .image-list-container .image-item .btn {
+      margin-right: 5px; }
+  .image-list-container .image-btn-add {
+    clear: both;
+    float: left; }
+    .image-list-container .image-btn-add i {
+      font-size: 12px; }
 
 .nav-tabs {
   border-bottom: 1px solid #ddd;

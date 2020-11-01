@@ -50,7 +50,6 @@ html {
     font-size: 12px;
     text-align: center;
     color: #fff;
-    // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,7 +66,6 @@ html {
         color: #a6a6c2;
         font-size: 14px;
         display: block;
-        // margin-left: 10px;
       }
       i {
         font-size: 15px;
@@ -76,10 +74,17 @@ html {
         &.arrow{
           float: right;
           margin-right: 10px;
+          // transform: rotate(180deg);
         }
-        &.arrow.up{
+      }
+      .nav-list{
+        display: none;
+      }
+      &.active{
+        .arrow{
           transform: rotate(180deg);
         }
+        .nav-list{display: block;}
       }
     }
   }

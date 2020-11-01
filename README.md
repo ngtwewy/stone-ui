@@ -17,6 +17,7 @@ node-sass --watch -r ./scss -o ./assets/stylesheets
 ```
 ```
 browser-sync start --server --files "assets/javascript, assets/stylesheets, assets/images, example"
+browser- sync  start --server --files  "**/*.css, **/*.html, **/*.js"
 ```
 
 ## 作者信息

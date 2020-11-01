@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Upload</title>
     <link rel="stylesheet" href="../assets/stylesheets/style.css">
     <link rel="stylesheet" href="../assets/stylesheets/dashboard.css">
 </head>
@@ -100,7 +100,8 @@
                         <i class="iconfont">&#xefa9;</i>
                     </a>
                 </div>
-            </div><!--panel-header-->
+            </div>
+            <!--panel-header-->
 
             <div class="panel-body">
                 <div class="panel-body-container">
@@ -114,7 +115,7 @@
                         <li><a href="javascript:;">组件</a></li>
                         <li class="active"><a href="javascript:;">表单</a></li>
                     </ul>
-    
+
                     <div class="panel-box">
                         <ul class="nav-tabs">
                             <li>
@@ -130,90 +131,93 @@
                         <form class="ajax-form" action="/user/user/editaction" method="post">
                             <div class="form-group">
                                 <label for="input-name">昵称</label>
-                                <input type="text" class="form-control" name="nickname" value="B个GL"> 
+                                <input type="text" class="form-control" name="nickname" value="B个GL">
                             </div>
-        
+
                             <div class="form-group">
                                 <label for="input-name">账号</label>
                                 <input type="text" class="form-control" name="username" value="">
                                 <p class="help-block">账号可以用来登录，请谨慎修改</p>
                             </div>
-        
-                            <div class="form-group">
-                                <label for="input-name">手机号</label>
-                                <input type="text" class="form-control" name="mobile" value="18812341234">
-                                <p class="help-block">手机号可以用来登录，请谨慎修改</p>
-                            </div>
-        
-                            <div class="form-group">
-                                <label for="input-name">邮箱</label>
-                                <input type="text" class="form-control" name="email" value="">
-                                <p class="help-block">邮箱可以用来登录，请谨慎修改</p>
-                            </div>
-        
-                            <div class="form-group">
-                                <label for="input-name">个性签名</label>
-                                <textarea class="form-control" name="signature" rows="3"></textarea>
-                            </div>
-        
+
                             <div class="form-group thumbnail-container">
-                                <label>头像</label>
-                                <div>
-                                    <input type="hidden" name="avatar" value="" class="input-hidden"/>
-                                    <input type="file" name="file" data-url='/asset/image/uploadthumbnail'>
-                                    <button type="button" class="btn btn-sm btn-info upload-button">点击上传缩略图</button> 
+                                <label>缩略图上传</label>
+                                <div class="thumbnail-panel">
+                                    <button type="button" class="btn btn-sm btn-info upload-button">
+                                        <i class="iconfont">&#xf1d9;</i>
+                                        <span>点击上传缩略图</span>
+                                    </button>
+                                    <div class="project-thumbnail">
+                                        <img src="../assets/images/test.jpg" data-thumbnail="/uploads/images/"
+                                            data-nothumbnail="/static/images/no-thumbnail.svg" class="img-rounded">
+                                        <button type="button" class="delete-button">
+                                            <i class="iconfont">&#xf1c3;</i>
+                                            <span>删除</span>
+                                        </button>
+                                    </div>
                                 </div>
-                                <button type="button" class="btn btn-danger" >删除</button>
+                                <input type="hidden" name="avatar" value="" class="input-hidden" />
+                                <input type="file" name="file" class="upload-input" data-url='/assets/json/thumbnail.json'>
                             </div>
-        
-                            <div class="form-group">
-                                <label for="input-name">角色</label>
-                                <select class="form-control" name="type">
-                                    <option value="3"  >二级用户</option>
-                                    <option value="2" selected >普通用户</option>
-                                    <option value="1"  >超级管理员</option>
-                                </select>
+
+
+                            <div class="form-group image-list-container">
+                                <label for="input-name">图片</label>
+                                <div>
+                                    <div class="image-item">
+                                        <input type="text" name="image_name[]" value="1232" class="form-control">
+                                        <input type="hidden" name="image_url[]"
+                                            value="20200513/1d25448c8c280012ccd55d95e9c0b810.jpg" class="form-control">
+                                        <img src="../assets/images/test.jpg" data-action="zoom">
+                                        <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>
+                                        <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>
+                                    </div>
+                                    <div class="image-item">
+                                        <input type="text" name="image_name[]" value="2322" class="form-control">
+                                        <input type="hidden" name="image_url[]"
+                                            value="20200513/4844091c09b348a0c5665d20ec0d3e4f.jpg" class="form-control">
+                                        <img src="../assets/images/test.jpg" data-action="zoom">
+                                        <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>
+                                        <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>
+                                    </div>
+                                    <div class="image-item">
+                                        <input type="text" name="image_name[]" value="3245342" class="form-control">
+                                        <input type="hidden" name="image_url[]"
+                                            value="20200513/0f42a4cb5d0e1448467cc24dc4439d44.jpg" class="form-control">
+                                        <img src="../assets/images/test.jpg" data-action="zoom">
+                                        <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>
+                                        <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>
+                                    </div>
+
+                                    <button class="btn image-btn-add" type="button">
+                                        <i class="iconfont">&#xf1d9;</i>
+                                        <span>添加图片</span>
+                                    </button>
+                                    <input type="file" name="image_input" style="display:none;"
+                                        data-url="/asset/image/uploadthumbnail?resize=false">
+                                </div>
                             </div>
-        
-                            <div class="form-group">
-                                <label for="input-name">黑名单</label>
-                                <label>
-                                    <input type="radio" name="is_black" value="1" > 拉黑
-                                </label>
-                                <label>
-                                    <input type="radio" name="is_black" value="0" checked> 正常
-                                </label>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="input-name">账户状态</label>
-                                <label>
-                                    <input type="radio" name="is_active" value="1" checked> 激活
-                                </label>
-                                <label>
-                                    <input type="radio" name="is_active" value="0" > 未激活
-                                </label>
-                            </div>
-        
+
+
                             <div class="form-group">
                                 <input type="hidden" name="id" value="52">
-                                <button type="submit" class="btn btn-default ajax-submit">保存</button>
+                                <button type="submit" class="btn btn-default ajax-submit btn-big">保存</button>
                             </div>
                         </form>
 
-                        <div>
-                            <a class="btn" href="#">查看更多</a>
-                            <a class="btn btn-default" href="#" role="button">Link</a>
-                            <button class="btn btn-default" type="submit">Button</button>
-                            <button class="btn btn-danger" type="submit">Button</button>
-                        </div>
+
                     </div><!-- ./panel-box -->
                 </div>
-            </div><!--panel-body-->
-        </div><!--panel-container-->
+            </div>
+            <!--panel-body-->
+        </div>
+        <!--panel-container-->
 
     </div>
+    <script src="../assets/javascripts/axios.min.js"></script>
     <script src="../assets/javascripts/sider-nav.js"></script>
+    <script src="../assets/javascripts/zooming.js"></script>
+    <script src="../assets/javascripts/thumbnail.js"></script>
 </body>
 
 </html>

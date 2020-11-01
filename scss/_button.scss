@@ -20,7 +20,7 @@
   border-radius: $stone-border-radius-sm;
   padding: 3px 12px;
   display: inline;
-  font-size: 14px;
+  font-size: 5px;
   color: rgba(0,0,0,.65);
   &:not(.btn-default):not(.btn-danger):focus{
     color: $stone-color-primary;
@@ -46,11 +46,15 @@
   box-shadow: 0 2px 0 rgba(0,0,0,.045);
 }
 
-
 .btn-danger{
   color: #fff;
   background-color: $stone-color-error;
   border-color: #ff4d4f;
   text-shadow: 0 -1px 0 rgba(0,0,0,.12);
   box-shadow: 0 2px 0 rgba(0,0,0,.045);
+}
+
+.btn-big{
+  font-size: 14px;
+  padding: 8px 25px;
 }

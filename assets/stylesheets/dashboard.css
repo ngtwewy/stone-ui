@@ -271,8 +271,12 @@ html {
         .siderbar ul.nav-list li i.arrow {
           float: right;
           margin-right: 10px; }
-        .siderbar ul.nav-list li i.arrow.up {
-          transform: rotate(180deg); }
+      .siderbar ul.nav-list li .nav-list {
+        display: none; }
+      .siderbar ul.nav-list li.active .arrow {
+        transform: rotate(180deg); }
+      .siderbar ul.nav-list li.active .nav-list {
+        display: block; }
 
 /* 右侧内容 ------------------------------------ */
 /** 右侧 **/

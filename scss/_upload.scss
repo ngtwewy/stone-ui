@@ -1,0 +1,76 @@
+//
+// 缩略图上传
+// --------------------------------------------------
+
+.thumbnail-container {
+  display: flex;
+  align-items: flex-start;
+  i { font-size: 12px; }
+  label { margin-top: 3px; }
+  .thumbnail-panel {
+    .project-thumbnail {
+      width: 200px;
+      height: 170px;
+      margin: 10px 0px 0px 0px;
+      position: relative;
+      img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: $stone-border-radius-sm;
+      }
+      button {
+        border: 0px;
+        background-color: transparent;
+        color: $stone-color-error;
+      }
+    }
+  }
+  input {
+    display: none;
+  }
+}
+
+
+
+//
+// 多图片上传
+// --------------------------------------------------
+
+.image-list-container {
+  display: flex;
+  align-items: flex-start;
+  label {
+    margin-top: 5px;
+  }
+  .image-item {
+    clear: both;
+    margin: 0px 0px 10px 0px;
+    float: left;
+    display: flex;
+    align-items: center;
+    input {
+      width: 260px;
+      float: left;
+      margin-right: 5px;
+    }
+    img {
+      width: 34px;
+      height: 34px;
+      float: left;
+      display: block;
+      object-fit: cover;
+      border-radius: 3px;
+      margin-right: 5px;
+    }
+    .btn{
+      margin-right: 5px;
+    }
+  }
+  .image-btn-add {
+    clear: both;
+    float: left;
+    i{ font-size: 12px; }
+  }
+}
+

@@ -13,13 +13,18 @@
       return;
     }
     nav.addEventListener("click", function () {
-      if (this.parentNode.children[1].style.display == "none") {
-        this.parentNode.children[1].style.display = "block";
-        this.querySelector(".arrow").classList.add("up");
+      this.parentNode.classList.toggle("active");
+      /*
+      if (this.parentNode.classList.contains('active') == true) {
+        // this.parentNode.children[1].style.display = "block";
+        // this.querySelector(".arrow").classList.add("up");
+        console.log("true");
       } else {
-        this.parentNode.children[1].style.display = "none";
-        this.querySelector(".arrow").classList.remove("up");
+        // this.parentNode.children[1].style.display = "none";
+        // this.querySelector(".arrow").classList.remove("up");
+        console.log("false");
       }
+      */
     });
   });
 })();
