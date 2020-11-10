@@ -7,7 +7,7 @@
 * 表单
 * 面包屑导航
 * 分页
-
+* 日期选择器
 
 
 ## 编译命令
@@ -16,8 +16,7 @@
 node-sass --watch -r ./scss -o ./assets/stylesheets
 ```
 ```
-browser-sync start --server --files "assets/javascript, assets/stylesheets, assets/images, example"
-browser- sync  start --server --files  "**/*.css, **/*.html, **/*.js"
+browser-sync  start --server --files  "**/*.css, **/*.html, **/*.js"
 ```
 
 ## 作者信息

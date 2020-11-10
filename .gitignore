@@ -5,21 +5,7 @@
 .idea
 
 
-.vscode
-/api/config.php
-/api/weixin
-/api/websocket
-/api/index/controller/Test.php
-/application
-/application/config.php
-/public/test
-/public/uploads
-/public/manual
-/node_modules
-/data/runtime
-/test
-
-
+TODO.md
 
 
 

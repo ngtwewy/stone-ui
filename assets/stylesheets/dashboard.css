@@ -252,6 +252,11 @@ html {
     display: flex;
     justify-content: center;
     align-items: center; }
+  .siderbar #nav-wrapper {
+    height: calc(100vh - 55px);
+    overflow-y: scroll; }
+    .siderbar #nav-wrapper::-webkit-scrollbar {
+      display: none; }
   .siderbar ul.nav-list {
     padding-left: 0px;
     margin-left: 25px; }
@@ -290,7 +295,8 @@ html {
     background: #ffffff;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    z-index: 99999; }
     .panel-container .panel-header i {
       color: #a6a6c2;
       font-size: 18px; }

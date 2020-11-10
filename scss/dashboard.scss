@@ -54,6 +54,14 @@ html {
     justify-content: center;
     align-items: center;
   }
+  #nav-wrapper{
+    height: calc(100vh - 55px);
+    // scrollbar-width:none;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;  
+    }
+  }
   ul.nav-list {
     padding-left: 0px;
     margin-left: 25px;
@@ -104,6 +112,7 @@ html {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: space-between;
+    z-index: 99999;
     i {
       color: #a6a6c2;
       font-size: 18px;
