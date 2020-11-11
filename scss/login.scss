@@ -18,7 +18,7 @@ body {
   background-color: #fff;
   border-radius: 4px;
   width: 360px;
-  height: 290px;
+  min-height: 290px;
   padding: 35px 40px 50px;
   position: absolute;
   top: 50%;
@@ -78,18 +78,26 @@ body {
       top: 14px;
       z-index: 1;
     }
-
     .validform-wrong {
       background: #e53451;
       border-radius: 3px;
       color: #fff;
       float: right;
     }
-
     .validform-right {
       padding: 0 10px;
       color: #71b83d;
       background: url(../images/right.png) no-repeat right center/16px auto;
+    }
+    &.code{
+      input{width: 225px;}
+      .captcha-img{
+        width: 100px;
+        height: 40px;
+        border: 1px solid #ccc; 
+        float: right;
+        cursor: pointer;
+      }
     }
   }
   .login_btn {

@@ -15,7 +15,7 @@ body {
   background-color: #fff;
   border-radius: 4px;
   width: 360px;
-  height: 290px;
+  min-height: 290px;
   padding: 35px 40px 50px;
   position: absolute;
   top: 50%;
@@ -78,6 +78,14 @@ body {
       padding: 0 10px;
       color: #71b83d;
       background: url(../images/right.png) no-repeat right center/16px auto; }
+    .login .line.code input {
+      width: 225px; }
+    .login .line.code .captcha-img {
+      width: 100px;
+      height: 40px;
+      border: 1px solid #ccc;
+      float: right;
+      cursor: pointer; }
   .login .login_btn input {
     width: 100%;
     height: 44px;

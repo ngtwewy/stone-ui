@@ -356,11 +356,62 @@ html {
       padding: 0px 15px 15px 15px; }
 
 .panel-box {
-  padding: 15px 30px 50px 30px;
+  padding: 15px 30px 35px 30px;
+  margin-bottom: 12px;
   background-color: #fff;
   border: 1px solid #ebedf0;
   border-radius: 4px;
   overflow: hidden; }
+
+.panel-widget {
+  padding: 15px 30px 35px 30px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  border: 1px solid #ebedf0;
+  border-radius: 4px;
+  overflow: hidden; }
+
+.panel-center {
+  display: flex;
+  justify-content: space-between; }
+  .panel-center .panel-center-left {
+    width: calc(100vw - 628px); }
+    .panel-center .panel-center-left .panel-widget.counter-panel .counter-info {
+      display: flex;
+      justify-content: space-between; }
+      .panel-center .panel-center-left .panel-widget.counter-panel .counter-info .info-widget {
+        width: 130px;
+        height: 150px;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #fff; }
+        .panel-center .panel-center-left .panel-widget.counter-panel .counter-info .info-widget i {
+          font-size: 38px;
+          margin-top: 15px; }
+        .panel-center .panel-center-left .panel-widget.counter-panel .counter-info .info-widget .title {
+          font-size: 13px;
+          margin-top: 10px; }
+        .panel-center .panel-center-left .panel-widget.counter-panel .counter-info .info-widget:nth-child(1) {
+          box-shadow: 0 2px 20px 0 #cb5342;
+          background-color: #cb5342; }
+        .panel-center .panel-center-left .panel-widget.counter-panel .counter-info .info-widget:nth-child(2) {
+          box-shadow: 0 2px 20px 0 #6971f6;
+          background-color: #6971f6; }
+        .panel-center .panel-center-left .panel-widget.counter-panel .counter-info .info-widget:nth-child(3) {
+          box-shadow: 0 2px 20px 0 #e7b753;
+          background-color: #e7b753; }
+        .panel-center .panel-center-left .panel-widget.counter-panel .counter-info .info-widget:nth-child(4) {
+          box-shadow: 0 2px 20px 0 #59968e;
+          background-color: #59968e; }
+        .panel-center .panel-center-left .panel-widget.counter-panel .counter-info .info-widget:nth-child(5) {
+          box-shadow: 0 2px 20px 0 #dd366a;
+          background-color: #dd366a; }
+  .panel-center .panel-center-right {
+    width: 390px;
+    min-height: 200px; }
 
 .panel-show {
   width: 100%;

@@ -192,15 +192,79 @@ html {
 
 
 //
-// 面板模块
+// 面板模块 dashboard
 // --------------------------------------------------
 .panel-box{
-  padding: 15px 30px 50px 30px;
+  padding: 15px 30px 35px 30px;
+  margin-bottom: 12px;
   background-color: #fff;
   border: 1px solid #ebedf0;
   border-radius: 4px;
   overflow: hidden;
 }
+.panel-widget{
+  padding: 15px 30px 35px 30px;
+  margin-bottom: 12px;
+  background-color: #fff;
+  border: 1px solid #ebedf0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+$center-right: 390px;
+.panel-center{
+  display: flex;
+  justify-content: space-between;
+  .panel-center-left{
+    width: calc(100vw - #{$center-right + 180px + 58px});
+    .panel-widget.counter-panel{
+      .counter-info{
+        display: flex;
+        justify-content: space-between;
+        .info-widget{
+          width: 130px;
+          height: 150px;
+          border-radius: $stone-border-radius-sm;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          i{ font-size: 38px; margin-top: 15px;}
+          .title{ font-size: 13px; margin-top: 10px;}
+          &:nth-child(1){
+            box-shadow: 0 2px 20px 0 #cb5342;
+            background-color: #cb5342;
+          }
+          &:nth-child(2){
+            box-shadow: 0 2px 20px 0 #6971f6;
+            background-color: #6971f6;
+          }
+          &:nth-child(3){
+            box-shadow: 0 2px 20px 0 #e7b753;
+            background-color: #e7b753;
+          }
+          &:nth-child(4){
+            box-shadow: 0 2px 20px 0 #59968e;
+            background-color: #59968e;
+          }
+          &:nth-child(5){
+            box-shadow: 0 2px 20px 0 #dd366a;
+            background-color: #dd366a;
+          }
+        }
+      }
+    }
+  }
+  .panel-center-right{
+    width: $center-right;
+    // width: calc(100vw - #{$center-right});
+    min-height: 200px;
+    // background-color: #fff;
+  }
+}
+
+
 
 
 //
