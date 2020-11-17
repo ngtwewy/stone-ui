@@ -377,19 +377,30 @@ a {
   display: flex;
   align-items: center;
   clear: both; }
+  .form-group:nth-child(1) {
+    margin-top: 35px; }
+  .form-group:last-child {
+    margin-left: 95px; }
   .form-group label {
     font-size: 14px;
     display: inline-block;
     max-width: 100%;
     width: 80px;
     margin-right: 15px;
-    font-weight: normal; }
+    font-weight: normal;
+    position: relative; }
     .form-group label:nth-child(1) {
       text-align: right; }
+    .form-group label input[type='radio'] {
+      width: 16px;
+      height: 16px;
+      margin: -5px 2px 0px 0px;
+      vertical-align: middle; }
   .form-group input,
   .form-group optgroup,
   .form-group select,
   .form-group textarea {
+    min-height: 22px;
     color: inherit;
     font: inherit; }
   .form-group .form-control {
@@ -413,10 +424,6 @@ a {
     font-size: 13px;
     color: #737373;
     margin-left: 20px; }
-  .form-group:nth-child(1) {
-    margin-top: 35px; }
-  .form-group:last-child {
-    margin-left: 95px; }
 
 .form-inline {
   display: flex;
