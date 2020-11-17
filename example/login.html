@@ -11,6 +11,7 @@
 
 <body>
     <div class="videocontainer">
+        <!--
         <video 
         class="fullscreenvideo"
         id="v1" 
@@ -20,6 +21,7 @@
         loop="true">
             <source src="http://cloud.restfulapi.cn/video/bg-video.mp4" type="video/mp4">
         </video>
+        -->
     </div>
     <script>
         var video= document.getElementById('v1');
@@ -27,23 +29,23 @@
     </script>
 
     <div class="login">
-        <form class="loginform" method="post" action="/login" onsubmit="return false;">
+        <form class="loginform ajax-form" method="post" action="/login" onsubmit="return false;">
             <div class="logo">Store UI 登录</div>
             <div class="line">
-                <input class="inputtxt" type="text" name="username" value="" required placeholder="账号">
+                <input class="inputtxt" type="text" name="username" value="" placeholder="账号">
                 <div class="validform-checktip validform-right"></div>
             </div>
             <div class="line">
-                <input class="inputtxt" type="password" name="password" value="" required placeholder="密码">
+                <input class="inputtxt" type="password" name="password" value="" placeholder="密码">
                 <div class="validform-checktip validform-wrong">错误提示</div>
             </div>
             <div class="line code" style="top: -5px;">
-                <input type="text" class="inputtxt" name="code" nullmsg="请填写4位验证码" errormsg="验证码不对" required placeholder="请填写验证码">
+                <input type="text" class="inputtxt" name="code" nullmsg="请填写4位验证码" errormsg="验证码不对" placeholder="请填写验证码">
                 <div class="validform-checktip"></div>
                 <img class="captcha-img" src="../assets/images/code.png" data-src="../assets/images/code.png" title="点击换一张">
             </div>
             <div class="login_btn">
-                <input id="login-button" value="登录" type="submit">
+                <input id="login-button" class="ajax-submit" value="登录" type="submit">
             </div>
             <a class="resetpw" href="#" target="_blank">忘记密码?</a>
         </form>
@@ -51,6 +53,7 @@
 
     <script src="../assets/javascripts/axios.min.js"></script>
     <script src="../assets/javascripts/stoneui.js"></script>
+    <script src="../assets/plugins/layer-mobile/layer.js"></script>
     <script>
     function changeCaptcha(){
         var img     = document.querySelector(".captcha-img");
@@ -63,6 +66,15 @@
     if(captcha){
         captcha.onclick = function(){changeCaptcha();}
     }
+
+    // document.querySelector("#login-button").addEventListener("click", function(){
+    //     //提示
+    //     layer.open({
+    //         content: 'hello layer'
+    //         ,skin: 'msg'
+    //         ,time: 2 //2秒后自动关闭
+    //     });
+    // });
     </script>
 </body>
 

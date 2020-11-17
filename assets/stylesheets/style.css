@@ -418,6 +418,24 @@ a {
   .form-group:last-child {
     margin-left: 95px; }
 
+.form-inline {
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+  .form-inline .form-group {
+    margin-top: 35px; }
+    .form-inline .form-group:last-child {
+      margin-left: 0px; }
+      .form-inline .form-group:last-child .btn {
+        margin-right: 10px; }
+    .form-inline .form-group label {
+      width: fit-content;
+      margin-right: 3px;
+      text-align: left; }
+    .form-inline .form-group .form-control {
+      width: 150px;
+      margin-right: 25px; }
+
 .table {
   width: 100%;
   max-width: 100%;

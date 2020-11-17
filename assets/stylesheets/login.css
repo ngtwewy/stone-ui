@@ -27,7 +27,7 @@ body {
     color: #444;
     cursor: pointer;
     height: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 22px;
     overflow: hidden; }
   .login .title {
     color: #444;
@@ -127,7 +127,7 @@ body {
     z-index: -1;
     top: 0;
     left: 0;
-    background: #191d22a6; }
+    background: #444444; }
   .videocontainer .fullscreenvideo {
     position: absolute;
     top: 50%;

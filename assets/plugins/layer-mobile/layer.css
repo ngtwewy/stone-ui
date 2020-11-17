@@ -41,7 +41,7 @@
 .layui-m-layer2 .layui-m-layerchild{width:auto; max-width:260px; min-width:40px; border:none; background: none; box-shadow: none; color:#fff;}
 .layui-m-layerchild h3{padding: 0 10px; height: 60px; line-height: 60px; font-size:16px; font-weight: 400;  border-radius: 5px 5px 0 0; text-align: center;}
 .layui-m-layerchild h3,
-.layui-m-layerbtn span{ text-overflow:ellipsis; overflow:hidden; white-space:nowrap;}
+.layui-m-layerbtn span{ text-overflow:ellipsis; overflow:hidden; white-space:nowrap;margin-top:0px;}
 .layui-m-layercont{padding: 50px 30px; line-height: 22px; text-align:center;}
 .layui-m-layer1 .layui-m-layercont{padding:0; text-align:left;}
 .layui-m-layer2 .layui-m-layercont{text-align:center; padding: 0; line-height: 0;}

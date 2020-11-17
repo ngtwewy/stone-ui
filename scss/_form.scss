@@ -61,3 +61,30 @@
 
 
 
+.form-inline{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .form-group{
+    margin-top: 35px;
+    // &:nth-child(1){
+    //   margin-top: 0px;
+    // }
+    &:last-child {
+      margin-left: 0px;
+      .btn{
+        margin-right: 10px;
+      }
+    }
+    label{
+      width: fit-content;
+      margin-right: 3px;
+      text-align: left;
+    }
+    .form-control{
+      width: 150px;
+      margin-right: 25px;
+    }
+  }
+}
+

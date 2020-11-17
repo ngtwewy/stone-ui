@@ -196,7 +196,7 @@ win.layer = {
   
   document.head.appendChild(function(){
     var link = doc.createElement('link');
-    link.href = path + 'need/layer.css?2.0';
+    link.href = path + 'layer.css?2.0';
     link.type = 'text/css';
     link.rel = 'styleSheet'
     link.id = 'layermcss';

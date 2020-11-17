@@ -36,7 +36,7 @@ this.stoneUI = {};
 				}else if(buttonAction){
 					url = buttonAction;
 				}else{
-					myAlert.show("没有找到表单地址", 'danger');
+					layer.open({ content: "没有找到表单地址",skin: 'msg',time: 2 });
 					return false;
 				}
 				//有没有弹出信息
@@ -77,14 +77,16 @@ this.stoneUI = {};
 		.then(function (response) {
 			console.log(response.data);
 			if(response.data.code==1){
-				myAlert.show(response.data.msg, 'success', response.data.url, response.data.seconds);
+				layer.open({ content: response.data.msg, skin: 'msg',time: 2 });
+				setTimeout(function(){
+					location.href = response.data.url;
+				},response.data.seconds*1000);
 			}else{
-				// myAlert.show(response.data.msg, 'danger', response.data.url, response.data.seconds);
-				myAlert.show(response.data.msg, 'danger');
+				layer.open({ content: response.data.msg, skin: 'msg',time: 2 });
 			}
 		})
 		.catch(function (error) {
-			console.log(error);
+			layer.open({ content: error,skin: 'msg',time: 2 });
 		});
 	}
 })();
