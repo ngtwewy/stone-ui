@@ -1,6 +1,15 @@
-
+/**
+ * 1.表单自动提交
+ * 2.上传缩略图
+ * 3.上传图片列表
+ * 4.图片预览
+ */
 
 this.stoneUI = {};
+
+/************************************************************************/
+/******************************** 分割线 *********************************/
+/************************************************************************/
 
 /** 表单自动提交
 * @author   ngtwewy <https://www.restfulapi.cn>
@@ -8,87 +17,86 @@ this.stoneUI = {};
 * @time     2018-09-21
 */
 
-
-/* ============================================================================
+/* 
  * 表单按钮操作
  */
-(function(){
+(function () {
   //所有Ajax操作都依赖Axios, 对Axios初始化
   axios.defaults.headers['X-Requested-With'] = "XMLHttpRequest";
   axios.defaults.headers['Content-Type'] = 'application/x-www-form-urlencoded';
   //获取所有表单
-  var forms    = document.querySelectorAll(".ajax-form");
-  if(!forms){
+  var forms = document.querySelectorAll(".ajax-form");
+  if (!forms) {
     return false;
   }
-	//获取表单中的所有按钮，绑定事件
-  forms.forEach(function(form){
+  //获取表单中的所有按钮，绑定事件
+  forms.forEach(function (form) {
     var buttons = form.querySelectorAll(".ajax-submit");
-    buttons.forEach(function(button){
-      button.onclick = function(){
-				//按钮事件处理函数
-				var formData  		= new FormData(form);
-				var formAction		= form.getAttribute("action");
-				var buttonAction  = button.getAttribute("data-action");
-				var url = null;
-				if(formAction){
-					url = formAction;
-				}else if(buttonAction){
-					url = buttonAction;
-				}else{
-					layer.open({ content: "没有找到表单地址",skin: 'msg',time: 2 });
-					return false;
-				}
-				//有没有弹出信息
-				if(this.getAttribute("data-msg")){
-					console.log("data-msg: ", this.getAttribute("data-msg"));
-					var options = {
-						title:'提示',
-						message: this.getAttribute("data-action"),
-						button: [
-							{
-								value:'取消'
-							},
-							{
-								value: '确定',
-								callback: function () {
-									myDialog.closeModal();
-									ajaxAction(formData, url);
-								},
-								type:'primary'
-							}
-						]};
-					myDialog.config(options).show( this.getAttribute("data-msg") );
-				}else{
-					ajaxAction(formData, url);
-				}
-				return false;
-			}
+    buttons.forEach(function (button) {
+      button.onclick = function () {
+        //按钮事件处理函数
+        var formData = new FormData(form);
+        var formAction = form.getAttribute("action");
+        var buttonAction = button.getAttribute("data-action");
+        var url = null;
+        if (formAction) {
+          url = formAction;
+        } else if (buttonAction) {
+          url = buttonAction;
+        } else {
+          layer.open({ content: "没有找到表单地址", skin: 'msg', time: 2 });
+          return false;
+        }
+        //有没有弹出信息
+        if (this.getAttribute("data-msg")) {
+          console.log("data-msg: ", this.getAttribute("data-msg"));
+          var options = {
+            title: '提示',
+            message: this.getAttribute("data-action"),
+            button: [
+              {
+                value: '取消'
+              },
+              {
+                value: '确定',
+                callback: function () {
+                  myDialog.closeModal();
+                  ajaxAction(formData, url);
+                },
+                type: 'primary'
+              }
+            ]
+          };
+          myDialog.config(options).show(this.getAttribute("data-msg"));
+        } else {
+          ajaxAction(formData, url);
+        }
+        return false;
+      }
     });
   });
   //ajax提交函数
-	function ajaxAction(formData, url){
-		axios({
-			method: 'post',
-			url: url,
-			responseType: 'json',
-			data: formData
-		})
-		.then(function (response) {
-			console.log(response.data);
-			if(response.data.code==1){
-				layer.open({ content: response.data.msg, skin: 'msg',time: 2 });
-				setTimeout(function(){
-					location.href = response.data.url;
-				},response.data.seconds*1000);
-			}else{
-				layer.open({ content: response.data.msg, skin: 'msg',time: 2 });
-			}
-		})
-		.catch(function (error) {
-			layer.open({ content: error,skin: 'msg',time: 2 });
-		});
-	}
+  function ajaxAction(formData, url) {
+    axios({
+      method: 'post',
+      url: url,
+      responseType: 'json',
+      data: formData
+    })
+      .then(function (response) {
+        console.log(response.data);
+        if (response.data.success == true) {
+          layer.open({ content: response.data.message, skin: 'msg', time: 2 });
+          var seconds = response.data.seconds ? response.data.seconds : 3;
+          setTimeout(function () { location.href = response.data.url; }, seconds * 1000);
+        } else {
+          layer.open({ content: response.data.message, skin: 'msg', time: 2 });
+        }
+      })
+      .catch(function (error) {
+        layer.open({ content: error, skin: 'msg', time: 2 });
+      });
+  }
 })();
 
 
@@ -103,19 +111,19 @@ this.stoneUI = {};
 * @time     2018-10-14
 */
 
-(function(){
-	//所有缩略图绑定
-	var thumbnailContainers = document.querySelectorAll(".thumbnail-panel");
+(function () {
+  //所有缩略图绑定
+  var thumbnailContainers = document.querySelectorAll(".thumbnail-panel");
   if (thumbnailContainers) {
-		console.log("ssss: ", thumbnailContainers);
+    console.log("ssss: ", thumbnailContainers);
     thumbnailContainers.forEach(function (item) {
-			console.log("item ", item);
+      console.log("item ", item);
       item.querySelector('.upload-button').addEventListener('click', thumbnailAction);
       item.querySelector('.delete-button').addEventListener('click', thumbnailDelete);
       //检测是否有缩略图，有的话, 显示缩略图，同时显示删除按钮
       if (item.querySelector('.input-hidden').value) {
-				var imgUrl = item.querySelector('.project-thumbnail img').getAttribute("data-thumbnail") 
-											+ item.querySelector('.input-hidden').value;
+        var imgUrl = item.querySelector('.project-thumbnail img').getAttribute("data-thumbnail")
+          + item.querySelector('.input-hidden').value;
         item.querySelector('.project-thumbnail img').src = imgUrl;
         item.querySelector('.delete-button').style.display = 'block';
       }
@@ -144,9 +152,9 @@ this.stoneUI = {};
           fileInput.parentNode.parentNode.querySelector('.input-hidden').value = response.data.data.thumbnail;
           fileInput.parentNode.parentNode.querySelector('.project-thumbnail img').src = response.data.data.url;
           fileInput.parentNode.parentNode.querySelector(".delete-button").style.display = 'block';
-        }else{
+        } else {
           myAlert.show(response.data.msg, 'danger');
-          fileInput.value="";
+          fileInput.value = "";
         }
       });
     }
@@ -170,21 +178,21 @@ this.stoneUI = {};
  * 上传图片列表
  */
 
- /**
-  <div class="image-item">
-      <input type="text" name="image_name[]" value="{$vo.name}" class="form-control">
-      <input type="hidden" name="image_url[]" value="{$vo.url}" class="form-control">
-      <img src="{$vo.url}">
-      <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>
-      <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>
-  </div>
+/**
+ <div class="image-item">
+     <input type="text" name="image_name[]" value="{$vo.name}" class="form-control">
+     <input type="hidden" name="image_url[]" value="{$vo.url}" class="form-control">
+     <img src="{$vo.url}">
+     <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>
+     <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>
+ </div>
 
-  <a class="btn btn-primary btn-sm image-btn-add" href="javascript:;">添加图片</a>
-  <input type="file" name="image_input" style="display:none;" data-url='{:url("asset/Image/uploadThumbnail")}'>
-  */
+ <a class="btn btn-primary btn-sm image-btn-add" href="javascript:;">添加图片</a>
+ <input type="file" name="image_input" style="display:none;" data-url='{:url("asset/Image/uploadThumbnail")}'>
+ */
 
 
- (function(){
+(function () {
   //上传按钮事件
   var imagesAction = function () {
     var that = this;
@@ -229,12 +237,12 @@ this.stoneUI = {};
     }
   }
   var image_btn_add = document.querySelectorAll(".image-btn-add");
-  if(image_btn_add){
-    image_btn_add.forEach(function(btn){
+  if (image_btn_add) {
+    image_btn_add.forEach(function (btn) {
       btn.addEventListener('click', imagesAction);
     });
   }
-  
+
 
   // 删除
   var image_btn_delete = document.querySelectorAll(".image-btn-delete");
@@ -281,7 +289,7 @@ this.stoneUI = {};
   }
   // 删除
   var image_btn_update = document.querySelectorAll(".image-btn-update");
-  if(image_btn_update){
+  if (image_btn_update) {
     image_btn_update.forEach(function (btn) {
       btn.addEventListener('click', updateAction);
     });
@@ -291,3 +299,82 @@ this.stoneUI = {};
 
 
 
+/************************************************************************/
+/******************************** 分割线 *********************************/
+/************************************************************************/
+/* 图片预览 */
+(function () {
+  var imagePreview = function (url) {
+    var html = '<div class="image-preview-background">\
+                  <div class="image-preview-background-color"></div>\
+                </div>';
+    document.querySelector('body').insertAdjacentHTML("beforeend", html);
+
+    var img = new Image();
+    img.src = url;
+    document.querySelector('.image-preview-background').appendChild(img);
+    document.querySelector('.image-preview-background img').classList.add("image-preview-image");
+    img.onload = function () {
+      imagePreviewSize(img);
+    }
+    document.querySelector('.image-preview-background').addEventListener("click", function () {
+      document.querySelector('body').removeChild(this);
+    });
+    document.querySelector('.image-preview-background').addEventListener("mousewheel", function (e) {
+      e.preventDefault();
+    });
+  }
+
+  var imagePreviewSize = function (img) {
+    var myClientWidth = document.documentElement.clientWidth * 0.8;
+    var myClientHeight = document.documentElement.clientHeight * 0.8;
+
+    if (myClientWidth > myClientHeight) {
+      img.width = myClientHeight;
+      img.height = myClientHeight;
+    } else {
+      img.width = myClientWidth;
+      img.height = myClientWidth;
+    }
+
+    document.querySelector('.image-preview-image').style.top = "calc(50% - " + img.height / 2 + "px)";
+    document.querySelector('.image-preview-image').style.left = "calc(50% - " + img.width / 2 + "px)";
+    return false;
+  }
+
+  document.querySelectorAll(".img-preview").forEach(function (item) {
+    item.addEventListener("click", function () {
+      var url = this.src;
+      console.log(url);
+      console.log(this.width, this.height);
+      imagePreview(url);
+    });
+  });
+})();
+
+
+
+/************************************************************************/
+/******************************** 分割线 *********************************/
+/************************************************************************/
+/**
+ * 控制面板左侧菜单
+ *
+ * @author ngtwewy <mail@restfulapi.cn>
+ * @link https://restfulapi.cn
+ */
+
+(function () {
+  var navs = document.querySelectorAll(".nav-list li a");
+  if (!navs) {
+    return;
+  }
+  navs.forEach(function (nav) {
+    if (!nav.parentNode.children[1]) {
+      return;
+    }
+    nav.addEventListener("click", function () {
+      this.parentNode.classList.toggle("active");
+    });
+  });
+})();

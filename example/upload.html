@@ -160,14 +160,14 @@
                                     <div class="project-thumbnail">
                                         <img src="../assets/images/test.jpg" data-thumbnail="/uploads/images/"
                                             data-nothumbnail="/static/images/no-thumbnail.svg" class="img-rounded">
-                                        <button type="button" class="delete-button">
+                                        <button type="button" class="delete-button" style="display: none;">
                                             <i class="iconfont">&#xf1c3;</i>
                                             <span>删除</span>
                                         </button>
                                     </div>
+                                    <input type="hidden" name="avatar" value="" class="input-hidden" />
+                                    <input type="file" name="file" class="upload-input" data-url='/assets/json/thumbnail.json'>
                                 </div>
-                                <input type="hidden" name="avatar" value="" class="input-hidden" />
-                                <input type="file" name="file" class="upload-input" data-url='/assets/json/thumbnail.json'>
                             </div>
 
 
