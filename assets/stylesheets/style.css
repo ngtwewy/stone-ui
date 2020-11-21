@@ -246,20 +246,18 @@ a {
 
 .btn {
   display: inline-block;
-  margin-bottom: 0px;
   font-weight: 400;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  touch-action: manipulation;
+  padding: 0px 12px;
+  margin: 0px;
+  height: 34px;
+  line-height: 34px;
+  font-size: 15px;
+  color: #333;
   cursor: pointer;
-  background-image: none;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
-  padding: 3px 12px;
-  display: inline;
-  font-size: 5px;
-  color: rgba(0, 0, 0, 0.65); }
+  box-sizing: border-box; }
   .btn:not(.btn-default):not(.btn-danger):focus {
     color: #1890ff;
     border-color: #1890ff; }
@@ -287,6 +285,11 @@ a {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045); }
 
+.btn-sm {
+  height: 20px;
+  line-height: 20px;
+  font-size: 10px; }
+
 .btn-big {
   font-size: 14px;
   padding: 8px 25px; }
@@ -304,7 +307,7 @@ a {
 .pagination > li > span {
   position: relative;
   float: left;
-  padding: 4px 10px;
+  padding: 6px 10px;
   min-width: 10px;
   text-align: center;
   margin-left: -1px;
@@ -400,12 +403,13 @@ a {
   .form-group optgroup,
   .form-group select,
   .form-group textarea {
-    min-height: 22px;
+    min-height: 32px;
     color: inherit;
     font: inherit; }
   .form-group .form-control {
     display: block;
     width: 460px;
+    min-height: 20px;
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857;

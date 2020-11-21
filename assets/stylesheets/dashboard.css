@@ -436,3 +436,8 @@ html {
   position: sticky;
   /* 其他浏览器 */
   top: 0px; }
+
+.ql-syntax {
+  font-size: 12px !important;
+  background-color: #ebe9e9 !important;
+  color: #333 !important; }

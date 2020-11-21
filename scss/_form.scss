@@ -36,13 +36,14 @@
   optgroup,
   select,
   textarea {
-    min-height: 22px;
+    min-height: 32px;
     color: inherit;
     font: inherit;
   }
   .form-control {
     display: block;
     width: 460px;
+    min-height: 20px;
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857;
