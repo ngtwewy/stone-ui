@@ -25,6 +25,15 @@ html {
   color: #333;
 }
 
+//
+// 常用距离
+// --------------------------------------------------
+.margin-top-10{ margin-top: 10px; }
+.margin-top-20{ margin-top: 20px; }
+.margin-top-30{ margin-top: 30px; }
+
+
+
 .iconfont.hide{
   display: none;
 }
@@ -69,6 +78,10 @@ html {
       list-style: none;
       min-height: 38px;
       line-height: 38px;
+      &.active{
+        .arrow{transform: rotate(180deg);}
+        .nav-list{display: block;}        
+      }
       &,
       & a {
         color: #a6a6c2;
@@ -88,13 +101,8 @@ html {
       .nav-list{
         display: none;
       }
-      &.active{
-        .arrow{
-          transform: rotate(180deg);
-        }
-        .nav-list{display: block;}
-      }
     }
+    li.active>a{color: #fff;}
   }
 }
 
@@ -112,7 +120,7 @@ html {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: space-between;
-    z-index: 99999;
+    z-index: 1000;
     i {
       color: #a6a6c2;
       font-size: 18px;
@@ -310,4 +318,35 @@ $center-right: 390px;
   color: #333!important;
 }
 
+.editor-container {
+  width: 690px;
+}
+#editor{
+  height: 380px;
+}
+
+//
+// 表格内部样式
+// --------------------------------------------------
+td img{
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-bottom:-8px;
+  margin-right: 3px;
+  transition: all linear 0.1s;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+
+//
+// 统一按钮
+// --------------------------------------------------
+.form-group{
+  .btn.ajax-submit{
+    margin-right: 10px;
+  }
+}
 

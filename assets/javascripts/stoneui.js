@@ -48,29 +48,7 @@ this.stoneUI = {};
           return false;
         }
         //有没有弹出信息
-        if (this.getAttribute("data-msg")) {
-          console.log("data-msg: ", this.getAttribute("data-msg"));
-          var options = {
-            title: '提示',
-            message: this.getAttribute("data-action"),
-            button: [
-              {
-                value: '取消'
-              },
-              {
-                value: '确定',
-                callback: function () {
-                  myDialog.closeModal();
-                  ajaxAction(formData, url);
-                },
-                type: 'primary'
-              }
-            ]
-          };
-          myDialog.config(options).show(this.getAttribute("data-msg"));
-        } else {
-          ajaxAction(formData, url);
-        }
+        ajaxAction(formData, url);
         return false;
       }
     });
@@ -78,17 +56,18 @@ this.stoneUI = {};
   //ajax提交函数
   function ajaxAction(formData, url) {
     axios({
-      method: 'post',
+      method: 'POST',
       url: url,
       responseType: 'json',
       data: formData
     })
       .then(function (response) {
-        console.log(response.data);
+        console.log("stone-ui ajax: ", response.data);
         if (response.data.success == true) {
           layer.open({ content: response.data.message, skin: 'msg', time: 2 });
           var seconds = response.data.seconds ? response.data.seconds : 3;
-          setTimeout(function () { location.href = response.data.url; }, seconds * 1000);
+          var redirectUrl = response.data.url ? response.data.url : location.href;
+          setTimeout(function () { location.href = redirectUrl; }, seconds * 1000);
         } else {
           layer.open({ content: response.data.message, skin: 'msg', time: 2 });
         }
@@ -98,6 +77,53 @@ this.stoneUI = {};
       });
   }
 })();
+
+
+
+/************************************************************************/
+/******************************** 分割线 *********************************/
+/************************************************************************/
+/**
+ * Ajax按钮，常用于 delete
+ */
+(function () {
+  var buttons = document.querySelectorAll(".ajax-url");
+  if (buttons.length) {
+    buttons.forEach(function (btn) {
+      btn.onclick = function () {
+        var msg = this.getAttribute("data-msg");
+        var url = this.href;
+        var method = this.getAttribute("data-method") ? this.getAttribute("data-method") : 'get';
+
+        //询问框
+        layer.open({
+          content: msg,
+          btn: ['确定', '取消'],
+          yes: function (index) {
+            axios({ method: method, url: url, responseType: 'json' })
+              .then(function (response) {
+                console.log("response.data", response.data);
+                if (response.data.success == true) {
+                  layer.open({ content: response.data.message, skin: 'msg', time: response.data.seconds });
+                  setTimeout(function () {
+                    location.href = location.href;
+                  }, 2000);
+                } else {
+                  layer.open({ content: response.data.message, skin: 'msg', time: response.data.seconds });
+                }
+              })
+              .catch(function (error) {
+                layer.open({ content: error, skin: 'msg' });
+              });
+            layer.close(index);
+          }
+        });
+        return false;
+      }
+    });
+  }
+})();
+
 
 
 
@@ -153,7 +179,7 @@ this.stoneUI = {};
           fileInput.parentNode.parentNode.querySelector('.project-thumbnail img').src = response.data.data.url;
           fileInput.parentNode.parentNode.querySelector(".delete-button").style.display = 'block';
         } else {
-          myAlert.show(response.data.msg, 'danger');
+          myAlert.show(response.data.message, 'danger');
           fileInput.value = "";
         }
       });
@@ -218,8 +244,8 @@ this.stoneUI = {};
           console.log(data);
           var image_item = '\
                 <div class="image-item">\
-                    <input type="text" name="image_name[]" var="" class="form-control">\
-                    <input type="hidden" name="image_url[]" value="'+ data.thumbnail + '" class="form-control">\
+                    <input type="text" name="image_name" var="" class="form-control">\
+                    <input type="hidden" name="image_url" value="'+ data.thumbnail + '" class="form-control">\
                     <img src="'+ data.url + '">\
                     <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>\
                     <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>\
@@ -354,6 +380,8 @@ this.stoneUI = {};
 
 
 
+
+
 /************************************************************************/
 /******************************** 分割线 *********************************/
 /************************************************************************/
@@ -377,4 +405,37 @@ this.stoneUI = {};
       this.parentNode.classList.toggle("active");
     });
   });
+})();
+
+
+
+/************************************************************************/
+/******************************** 分割线 *********************************/
+/************************************************************************/
+/**
+ * checkbox 全选或全不选
+ */
+(function () {
+  //获取所有表单
+  var forms = document.querySelectorAll(".ajax-form");
+  if (!forms) { return false; }
+
+  forms.forEach(function (form) {
+    var checkAll = form.querySelector(".check-all");
+    if (!checkAll) { return false; }
+
+    checkAll.onclick = function () {
+      if (this.checked == true) {
+        form.querySelectorAll("input[name='ids[]']").forEach(function (item) {
+          item.checked = true;
+        });
+      } else {
+        console.log('false', checkAll.checked);
+        form.querySelectorAll("input[name='ids[]']").forEach(function (item) {
+          item.checked = false;
+        });
+      }
+    }
+  });
+
 })();

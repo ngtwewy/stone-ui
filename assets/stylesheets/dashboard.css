@@ -226,6 +226,15 @@ html {
   font-size: 13px;
   color: #333; }
 
+.margin-top-10 {
+  margin-top: 10px; }
+
+.margin-top-20 {
+  margin-top: 20px; }
+
+.margin-top-30 {
+  margin-top: 30px; }
+
 .iconfont.hide {
   display: none; }
 
@@ -264,6 +273,10 @@ html {
       list-style: none;
       min-height: 38px;
       line-height: 38px; }
+      .siderbar ul.nav-list li.active .arrow {
+        transform: rotate(180deg); }
+      .siderbar ul.nav-list li.active .nav-list {
+        display: block; }
       .siderbar ul.nav-list li,
       .siderbar ul.nav-list li a {
         color: #a6a6c2;
@@ -278,10 +291,8 @@ html {
           margin-right: 10px; }
       .siderbar ul.nav-list li .nav-list {
         display: none; }
-      .siderbar ul.nav-list li.active .arrow {
-        transform: rotate(180deg); }
-      .siderbar ul.nav-list li.active .nav-list {
-        display: block; }
+    .siderbar ul.nav-list li.active > a {
+      color: #fff; }
 
 /* 右侧内容 ------------------------------------ */
 /** 右侧 **/
@@ -296,7 +307,7 @@ html {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
     display: flex;
     justify-content: space-between;
-    z-index: 99999; }
+    z-index: 1000; }
     .panel-container .panel-header i {
       color: #a6a6c2;
       font-size: 18px; }
@@ -441,3 +452,23 @@ html {
   font-size: 12px !important;
   background-color: #ebe9e9 !important;
   color: #333 !important; }
+
+.editor-container {
+  width: 690px; }
+
+#editor {
+  height: 380px; }
+
+td img {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-bottom: -8px;
+  margin-right: 3px;
+  transition: all linear 0.1s; }
+  td img:hover {
+    transform: scale(1.1); }
+
+.form-group .btn.ajax-submit {
+  margin-right: 10px; }

@@ -7,9 +7,7 @@
 
 html,
 body {
-  // background-color: #444;
-  font-family: "Microsoft YaHei", 微软雅黑, STHei, "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
+  font-family: "Microsoft YaHei", STHei, "Helvetica Neue", Helvetica, Arial, sans-serif;
   position: relative;
   height: 100%;
 }
@@ -19,7 +17,7 @@ body {
   border-radius: 4px;
   width: 360px;
   min-height: 230px;
-  padding: 35px 40px 50px;
+  padding: 35px 40px 70px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -70,8 +68,8 @@ body {
     input {
       width: 100%;
       height: 44px;
-      background: linear-gradient(#1a1c35, #2c306b);
-      color: #a6a6c2;
+      background: linear-gradient(90deg,#32802b, #21641a);
+      color: #d1f8cd;
       border: 0px solid #1a1c35;
       text-align: center;
       font-size: 16px;
@@ -79,7 +77,7 @@ body {
       cursor: pointer;
     }
     input:hover {
-      background: linear-gradient(#292b52, #353b83);
+      background: linear-gradient(90deg,#45ac3b, #329427);
     }
   }
   .bottom-link {
@@ -101,6 +99,9 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -100;
+  background-image: url("https://pork.restfulapi.cn/images/bg1.jpg");
+  background-repeat: none;
+  background-size: cover;
   &:before {
     content: "";
     position: absolute;
@@ -110,8 +111,8 @@ body {
     z-index: -1;
     top: 0;
     left: 0;
-    // background: #191d22a6;
-    background: #444444;
+    background: #3b3a3a;
+    opacity: 0.5;
   }
   .fullscreenvideo {
     position: absolute;

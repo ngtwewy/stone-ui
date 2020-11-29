@@ -252,15 +252,12 @@ a {
   margin: 0px;
   height: 34px;
   line-height: 34px;
-  font-size: 15px;
+  font-size: 13px;
   color: #333;
   cursor: pointer;
   border: 1px solid #d9d9d9;
   border-radius: 4px;
   box-sizing: border-box; }
-  .btn:not(.btn-default):not(.btn-danger):focus {
-    color: #1890ff;
-    border-color: #1890ff; }
 
 .btn:focus,
 .btn.focus,
@@ -269,9 +266,17 @@ a {
 .btn.active:focus,
 .btn.active.focus {
   outline: 0;
-  outline-width: 0px; }
+  outline-width: 0px;
+  filter: brightness(1.1); }
 
 .btn-default {
+  color: #555;
+  background-color: #fff;
+  border-color: #ccc;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.045); }
+
+.btn-primary {
   color: #fff;
   background-color: #1890ff;
   border-color: #1890ff;
@@ -450,7 +455,7 @@ a {
 .table {
   width: 100%;
   max-width: 100%;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 3px; }
   .table td,
   .table th {
