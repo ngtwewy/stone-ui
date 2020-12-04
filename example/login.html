@@ -5,29 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../assets/stylesheets/style.css">
-    <link rel="stylesheet" href="../assets/stylesheets/login.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/login.css">
 </head>
 
 <body>
     <div class="videocontainer">
-        <video 
-        class="fullscreenvideo"
-        id="v1" 
-        playsinline=""
-        autoplay="true" 
-        muted="" 
-        loop="true">
-            <source src="http://cloud.restfulapi.cn/video/bg-video.mp4" type="video/mp4">
+        <video class="fullscreenvideo" id="v1" playsinline="" autoplay="true" muted="" loop="true">
+            <source src="http://pork.restfulapi.cn/video/webm/" type="video/webm">
         </video>
     </div>
     <script>
         var video= document.getElementById('v1');
-        // video.playbackRate = 0.5;
+        video.playbackRate = 1;
     </script>
 
     <div class="login">
-        <form class="loginform ajax-form" method="post" action="/login" onsubmit="return false;">
+        <form class="loginform ajax-form" method="post" action="/login" target="_blank">
             <div class="logo">Store UI 登录</div>
             <div class="line">
                 <input class="inputtxt" type="text" name="username" value="" placeholder="账号">
@@ -39,13 +33,14 @@
             <div class="login_btn">
                 <input id="login-button" class="ajax-submit" value="登录" type="submit">
             </div>
-            <a class="bottom-link" href="#" target="_blank">忘记密码?</a>
+            <a class="bottom-link" href="javascript:;">忘记密码?</a>
         </form>
     </div>
 
-    <script src="../assets/javascripts/axios.min.js"></script>
-    <script src="../assets/javascripts/stoneui.js"></script>
-    <script src="../assets/plugins/layer-mobile/layer.js"></script>
+    <script src="../javascripts/axios.min.js"></script>
+    <script src="../plugins/layer-mobile/layer.js"></script>
+    <script src="../javascripts/stoneui.js"></script>
+
     <script>
     function changeCaptcha(){
         var img     = document.querySelector(".captcha-img");
@@ -59,14 +54,13 @@
         captcha.onclick = function(){changeCaptcha();}
     }
 
-    // document.querySelector("#login-button").addEventListener("click", function(){
-    //     //提示
-    //     layer.open({
-    //         content: 'hello layer'
-    //         ,skin: 'msg'
-    //         ,time: 2 //2秒后自动关闭
-    //     });
-    // });
+    document.querySelector(".bottom-link").addEventListener("click", function(){
+        layer.open({
+            content: '请联系管理员'
+            ,skin: 'msg'
+            ,time: 2
+        });
+    });
     </script>
 </body>
 

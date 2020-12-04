@@ -55,20 +55,20 @@ body {
       padding: 5px 10px;
       position: relative;
       z-index: 1;
-      box-shadow: 0 3px 5px -4px rgba(0, 0, 0, 0.4) inset, -1px 0 3px -2px rgba(0, 0, 0, 0.1) inset;
+      box-shadow: 0 3px 5px -4px #cddff3 inset,-1px 0 3px -2px #cddff3 inset;
       border-radius: 3px; }
   .login .login_btn input {
     width: 100%;
     height: 44px;
-    background: linear-gradient(90deg, #32802b, #21641a);
-    color: #d1f8cd;
-    border: 0px solid #1a1c35;
+    background: linear-gradient(90deg, #414e5e, #2a2b2d);
+    color: #cddff3;
+    border: 0px solid #a4c5eb;
     text-align: center;
     font-size: 16px;
     border-radius: 3px;
     cursor: pointer; }
   .login .login_btn input:hover {
-    background: linear-gradient(90deg, #45ac3b, #329427); }
+    background: linear-gradient(90deg, #5d7086, #64666b); }
   .login .bottom-link {
     bottom: 20px;
     color: #1a1c35;
@@ -83,7 +83,7 @@ body {
   height: 100%;
   overflow: hidden;
   z-index: -100;
-  background-image: url("https://pork.restfulapi.cn/images/bg1.jpg");
+  background-image: linear-gradient(68deg, #252629, #6d829b);
   background-repeat: none;
   background-size: cover; }
   .videocontainer:before {

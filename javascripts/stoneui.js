@@ -141,7 +141,6 @@ this.stoneUI = {};
   //所有缩略图绑定
   var thumbnailContainers = document.querySelectorAll(".thumbnail-panel");
   if (thumbnailContainers) {
-    console.log("ssss: ", thumbnailContainers);
     thumbnailContainers.forEach(function (item) {
       console.log("item ", item);
       item.querySelector('.upload-button').addEventListener('click', thumbnailAction);

@@ -1,22 +1,11 @@
 //
 // 后台模板
 // --------------------------------------------------
-
-/**
- * Author: ngtwewy <62006464@qq.com>
- * Author URI: http://javascript.net.cn
- * Project URI: https://github.com/ngtwewy/snowland
- * License: Apache Licence 2.0
- * License URI: http://www.apache.org/licenses/LICENSE-2.0
- */
-
-
 @charset "utf-8";
 
 @import "_normalize.scss";
 @import "_variables.scss";
 @import "_font.scss";
-
 
 body,
 html {
@@ -37,7 +26,9 @@ html {
 .iconfont.hide{
   display: none;
 }
-
+//
+// 后台首页
+// --------------------------------------------------
 .main-container {
   height: 100%;
   min-width: 1200px;
@@ -89,8 +80,8 @@ html {
         display: block;
       }
       i {
-        font-size: 15px;
-        top: 1px;
+        font-size: 20px;
+        top: 2px;
         margin-right: 5px;
         &.arrow{
           float: right;
@@ -106,8 +97,10 @@ html {
   }
 }
 
-/* 右侧内容 ------------------------------------ */
-/** 右侧 **/
+
+//
+// 右侧内容
+// --------------------------------------------------
 .panel-container {
   background-color: $stone-bg-color-grey;
   width: calc(100% - 180px);
@@ -123,7 +116,7 @@ html {
     z-index: 1000;
     i {
       color: #a6a6c2;
-      font-size: 18px;
+      font-size: 20px;
     }
     .panel-header-left {
       height: 100%;
@@ -217,6 +210,17 @@ html {
   border: 1px solid #ebedf0;
   border-radius: 4px;
   overflow: hidden;
+  & .counter-info{
+    color: #888888;
+    div{
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      span:nth-child(1){
+        font-weight: 700;
+      }
+    }
+  }
 }
 
 $center-right: 390px;

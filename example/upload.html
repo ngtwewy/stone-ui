@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload</title>
-    <link rel="stylesheet" href="../assets/stylesheets/style.css">
-    <link rel="stylesheet" href="../assets/stylesheets/dashboard.css">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/dashboard.css">
 </head>
 
 <body>
@@ -18,43 +18,43 @@
             <div id="nav-wrapper">
                 <ul class="nav-list">
                     <li>
-                        <a href="dashboard.html">
+                        <a href="index.html">
                             <span class="arr-right"></span>
-                            <i class="iconfont">&#xefe6;</i>
+                            <i class="iconfont">&#xe78e;</i>
                             <span>系统首页</span>
                         </a>
                     </li>
                     <li class="active">
                         <a href="javascript:;">
                             <span class="arr-right"></span>
-                            <i class="iconfont">&#xf1ea;</i>
+                            <i class="iconfont">&#xe737;</i>
                             <span>组件</span>
-                            <i class="iconfont arrow">&#xef22;</i>
+                            <i class="iconfont arrow">&#xe772;</i>
                         </a>
                         <ul class="nav-list">
                             <li>
                                 <a href="form.html">
-                                    <i class="iconfont">&#xf2ea;</i><span>表单</span>
+                                    <i class="iconfont">&#xe78e;</i><span>表单</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="table.html">
-                                    <i class="iconfont">&#xefee;</i><span>表格</span>
+                                    <i class="iconfont">&#xe78e;</i><span>表格</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="upload.html">
-                                    <i class="iconfont">&#xefee;</i><span>文件上传</span>
+                                    <i class="iconfont">&#xe78e;</i><span>文件上传</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="layer.html">
-                                    <i class="iconfont">&#xefee;</i><span>弹出层</span>
+                                    <i class="iconfont">&#xe78e;</i><span>弹出层</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="datepicker.html">
-                                    <i class="iconfont">&#xefee;</i><span>日期时间选择器</span>
+                                    <i class="iconfont">&#xe78e;</i><span>日期时间选择器</span>
                                 </a>
                             </li>
                         </ul>
@@ -62,14 +62,14 @@
                     <li>
                         <a href="javascript:;">
                             <span class="arr-right"></span>
-                            <i class="iconfont">&#xf1ea;</i>
+                            <i class="iconfont">&#xe737;</i>
                             <span>模板</span>
-                            <i class="iconfont arrow">&#xef22;</i>
+                            <i class="iconfont arrow">&#xe772;</i>
                         </a>
                         <ul class="nav-list">
                             <li>
                                 <a href="login.html">
-                                    <i class="iconfont">&#xf2ea;</i><span>登录模板</span>
+                                    <i class="iconfont">&#xe78e;</i><span>登录模板</span>
                                 </a>
                             </li>
                         </ul>
@@ -77,7 +77,7 @@
                     <li>
                         <a href="javascript:;">
                             <span class="arr-right"></span>
-                            <i class="iconfont">&#xf15e;</i>
+                            <i class="iconfont">&#xe77a;</i>
                             <span>退出</span>
                         </a>
                     </li>
@@ -91,21 +91,21 @@
             <div class="panel-header position-sticky">
                 <div class="panel-header-left">
                     <a href="javascript:;">
-                        <i class="iconfont">&#xef46;</i>
+                        <i class="iconfont">&#xe790;</i>
                     </a>
                 </div>
                 <div class="panel-header-right">
                     <a href="javascript:;">
-                        <i class="iconfont">&#xf407;</i>
+                        <i class="iconfont">&#xe72d;</i>
                     </a>
                     <a href="javascript:;">
-                        <i class="iconfont">&#xefc1;</i>
+                        <i class="iconfont">&#xe74c;</i>
                     </a>
                     <a class="bell red" href="javascript:;">
-                        <i class="iconfont">&#xf392;</i>
+                        <i class="iconfont">&#xe759;</i>
                     </a>
                     <a class="avatar" href="javascript:;">
-                        <img src="../assets/images/avatar.jpg" alt="">
+                        <img src="../images/avatar.jpg" alt="">
                         <span>进击的石头</span>
                         <i class="iconfont">&#xefa9;</i>
                     </a>
@@ -118,7 +118,7 @@
                     <ul class="breadcrumb">
                         <li>
                             <a href="javascript:;">
-                                <i class="iconfont">&#xf07b;</i>
+                                <i class="iconfont">&#xe751;</i>
                                 <span>首页</span>
                             </a>
                         </li>
@@ -154,11 +154,11 @@
                                 <label>缩略图上传</label>
                                 <div class="thumbnail-panel">
                                     <button type="button" class="btn btn-sm btn-info upload-button">
-                                        <i class="iconfont">&#xf1d9;</i>
+                                        <i class="iconfont">&#xe770;</i>
                                         <span>点击上传缩略图</span>
                                     </button>
                                     <div class="project-thumbnail">
-                                        <img src="../assets/images/test.jpg" data-thumbnail="/uploads/images/"
+                                        <img src="../images/no-thumbnail.png" data-thumbnail="/uploads/images/"
                                             data-nothumbnail="/static/images/no-thumbnail.svg" class="img-rounded">
                                         <button type="button" class="delete-button" style="display: none;">
                                             <i class="iconfont">&#xf1c3;</i>
@@ -166,6 +166,26 @@
                                         </button>
                                     </div>
                                     <input type="hidden" name="avatar" value="" class="input-hidden" />
+                                    <input type="file" name="file" class="upload-input" data-url='/assets/json/thumbnail.json'>
+                                </div>
+                            </div>
+
+                            <div class="form-group thumbnail-container">
+                                <label>缩略图上传</label>
+                                <div class="thumbnail-panel">
+                                    <button type="button" class="btn btn-sm btn-info upload-button">
+                                        <i class="iconfont">&#xe770;</i>
+                                        <span>点击上传缩略图</span>
+                                    </button>
+                                    <div class="project-thumbnail">
+                                        <img src="../images/no-thumbnail.png" data-thumbnail="/images/"
+                                            data-nothumbnail="/images/no-thumbnail.png" class="img-rounded">
+                                        <button type="button" class="delete-button" style="display: none;">
+                                            <i class="iconfont">&#xf1c3;</i>
+                                            <span>删除</span>
+                                        </button>
+                                    </div>
+                                    <input type="hidden" name="thumbnail" value="test.jpg" class="input-hidden" />
                                     <input type="file" name="file" class="upload-input" data-url='/assets/json/thumbnail.json'>
                                 </div>
                             </div>
@@ -178,7 +198,7 @@
                                         <input type="text" name="image_name[]" value="1232" class="form-control">
                                         <input type="hidden" name="image_url[]"
                                             value="20200513/1d25448c8c280012ccd55d95e9c0b810.jpg" class="form-control">
-                                        <img src="../assets/images/test.jpg" data-action="zoom">
+                                        <img src="../images/test.jpg" data-action="zoom">
                                         <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>
                                         <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>
                                     </div>
@@ -186,7 +206,7 @@
                                         <input type="text" name="image_name[]" value="2322" class="form-control">
                                         <input type="hidden" name="image_url[]"
                                             value="20200513/4844091c09b348a0c5665d20ec0d3e4f.jpg" class="form-control">
-                                        <img src="../assets/images/test.jpg" data-action="zoom">
+                                        <img src="../images/test.jpg" data-action="zoom">
                                         <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>
                                         <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>
                                     </div>
@@ -194,24 +214,24 @@
                                         <input type="text" name="image_name[]" value="3245342" class="form-control">
                                         <input type="hidden" name="image_url[]"
                                             value="20200513/0f42a4cb5d0e1448467cc24dc4439d44.jpg" class="form-control">
-                                        <img src="../assets/images/test.jpg" data-action="zoom">
+                                        <img src="../images/test.jpg" data-action="zoom">
                                         <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>
                                         <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>
                                     </div>
 
-                                    <button class="btn image-btn-add" type="button">
-                                        <i class="iconfont">&#xf1d9;</i>
+                                    <button class="btn btn-sm image-btn-add" type="button">
+                                        <i class="iconfont">&#xe770;</i>
                                         <span>添加图片</span>
                                     </button>
-                                    <input type="file" name="image_input" style="display:none;"
-                                        data-url="/asset/image/uploadthumbnail?resize=false">
+                                    <input type="file" name="image_input" style="display:none;" data-url="/admin/images/uploadimage">
                                 </div>
                             </div>
 
 
                             <div class="form-group">
-                                <input type="hidden" name="id" value="52">
-                                <button type="submit" class="btn btn-default ajax-submit btn-big">保存</button>
+                                <input type="hidden" name="id" value="<%= article.id %>">
+                                <button type="submit" class="btn btn-primary ajax-submit">保存</button>
+                                <a class="btn btn-default" href="javascript:history.go(-1)">返回</a>
                             </div>
                         </form>
 
@@ -224,10 +244,11 @@
         <!--panel-container-->
 
     </div>
-    <script src="../assets/javascripts/axios.min.js"></script>
-    <script src="../assets/javascripts/sider-nav.js"></script>
-    <script src="../assets/javascripts/zooming.js"></script>
-    <script src="../assets/javascripts/stoneui.js"></script>
+
+    <script src="../javascripts/axios.min.js"></script>
+    <script src="../plugins/layer-mobile/layer.js"></script>
+    <script src="../javascripts/stoneui.js"></script>
+    
 </body>
 
 </html>

@@ -1,11 +1,4 @@
 @charset "UTF-8";
-/**
- * Author: ngtwewy <62006464@qq.com>
- * Author URI: http://javascript.net.cn
- * Project URI: https://github.com/ngtwewy/snowland
- * License: Apache Licence 2.0
- * License URI: http://www.apache.org/licenses/LICENSE-2.0
- */
 /* normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;
@@ -208,8 +201,8 @@ th {
 @font-face {
   font-family: 'iconfont';
   /* project id 1682937 */
-  src: url("https://at.alicdn.com/t/font_1682937_0wdtjqyk9o6.eot");
-  src: url("https://at.alicdn.com/t/font_1682937_0wdtjqyk9o6.eot?#iefix") format("embedded-opentype"), url("https://at.alicdn.com/t/font_1682937_0wdtjqyk9o6.woff2") format("woff2"), url("https://at.alicdn.com/t/font_1682937_0wdtjqyk9o6.woff") format("woff"), url("https://at.alicdn.com/t/font_1682937_0wdtjqyk9o6.ttf") format("truetype"), url("https://at.alicdn.com/t/font_1682937_0wdtjqyk9o6.svg#iconfont") format("svg"); }
+  src: url("../fonts/iconfont.eot");
+  src: url("../fonts/iconfont.eot?#iefix") format("embedded-opentype"), url("../fonts/iconfont.woff2") format("woff2"), url("../fonts/iconfont.woff") format("woff"), url("../fonts/iconfont.ttf") format("truetype"), url("../fonts/iconfont.svg#iconfont") format("svg"); }
 
 .iconfont {
   font-family: "iconfont" !important;
@@ -283,8 +276,8 @@ html {
         font-size: 14px;
         display: block; }
       .siderbar ul.nav-list li i {
-        font-size: 15px;
-        top: 1px;
+        font-size: 20px;
+        top: 2px;
         margin-right: 5px; }
         .siderbar ul.nav-list li i.arrow {
           float: right;
@@ -294,8 +287,6 @@ html {
     .siderbar ul.nav-list li.active > a {
       color: #fff; }
 
-/* 右侧内容 ------------------------------------ */
-/** 右侧 **/
 .panel-container {
   background-color: #eeeeee;
   width: calc(100% - 180px);
@@ -310,7 +301,7 @@ html {
     z-index: 1000; }
     .panel-container .panel-header i {
       color: #a6a6c2;
-      font-size: 18px; }
+      font-size: 20px; }
     .panel-container .panel-header .panel-header-left {
       height: 100%;
       display: flex;
@@ -381,6 +372,14 @@ html {
   border: 1px solid #ebedf0;
   border-radius: 4px;
   overflow: hidden; }
+  .panel-widget .counter-info {
+    color: #888888; }
+    .panel-widget .counter-info div {
+      margin-top: 16px;
+      display: flex;
+      justify-content: space-between; }
+      .panel-widget .counter-info div span:nth-child(1) {
+        font-weight: 700; }
 
 .panel-center {
   display: flex;
