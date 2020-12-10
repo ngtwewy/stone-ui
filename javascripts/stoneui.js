@@ -142,7 +142,7 @@ this.stoneUI = {};
   var thumbnailContainers = document.querySelectorAll(".thumbnail-panel");
   if (thumbnailContainers) {
     thumbnailContainers.forEach(function (item) {
-      console.log("item ", item);
+      // console.log("item ", item);
       item.querySelector('.upload-button').addEventListener('click', thumbnailAction);
       item.querySelector('.delete-button').addEventListener('click', thumbnailDelete);
       //检测是否有缩略图，有的话, 显示缩略图，同时显示删除按钮

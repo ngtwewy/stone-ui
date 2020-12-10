@@ -79,6 +79,9 @@ html {
         font-size: 14px;
         display: block;
       }
+      .arrow{
+        font-size: 15px;
+      }
       i {
         font-size: 20px;
         top: 2px;
@@ -86,7 +89,6 @@ html {
         &.arrow{
           float: right;
           margin-right: 10px;
-          // transform: rotate(180deg);
         }
       }
       .nav-list{

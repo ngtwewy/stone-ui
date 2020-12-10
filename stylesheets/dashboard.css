@@ -275,6 +275,8 @@ html {
         color: #a6a6c2;
         font-size: 14px;
         display: block; }
+      .siderbar ul.nav-list li .arrow {
+        font-size: 15px; }
       .siderbar ul.nav-list li i {
         font-size: 20px;
         top: 2px;
