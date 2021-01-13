@@ -1,19 +1,21 @@
 //
 // 表单
 // --------------------------------------------------
-
+form{
+  overflow: hidden;
+}
 .form-group {
   margin-bottom: 15px;
   display: flex;
   align-items: center;
   clear: both;
   &:nth-child(1){
-    margin-top: 35px;
+    margin-top: 15px;
   }
   &:last-child{
     margin-left: 95px;
   }
-  label {
+  &>label {
     font-size: 14px;
     display: inline-block;
     height: 34px;
@@ -70,8 +72,7 @@
   input:disabled{
     background-color: #e7e7e7;
   }
-  
-  
+ 
   
 }
 
@@ -101,3 +102,24 @@
   }
 }
 
+
+
+
+.checkbox-container{
+  height: auto;
+  width: 180px;
+  label{
+    display: block;
+    width: 150px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    clear: both;
+    user-select: none;
+    input[type="checkbox"]{
+      min-height: 16px;
+      height: 16px;
+      width: 16px;
+    }
+  }
+}

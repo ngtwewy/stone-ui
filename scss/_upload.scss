@@ -8,6 +8,7 @@
   i { font-size: 12px; }
   label { margin-top: 3px; }
   .thumbnail-panel {
+    padding-top: 10px;
     .project-thumbnail {
       width: 200px;
       height: 170px;
@@ -19,6 +20,7 @@
         object-fit: cover;
         border-radius: $stone-border-radius-sm;
       }
+      // 删除按钮
       button {
         border: 0px;
         background-color: transparent;
@@ -36,12 +38,14 @@
 //
 // 多图片上传
 // --------------------------------------------------
-
 .image-list-container {
   display: flex;
   align-items: flex-start;
+  &>div{
+    padding-top: 10px;
+  }
   label {
-    margin-top: 5px;
+    margin-top: 3px;
   }
   .image-item {
     clear: both;
@@ -74,3 +78,20 @@
   }
 }
 
+//
+// 多图片上传
+// --------------------------------------------------
+.file-upload-container {
+  display: flex;
+  align-items: flex-start;
+  &>div{
+    padding-top: 10px;
+    input{
+      margin-top: 10px;
+    }
+  }
+  label {
+    margin-top: 3px;
+  }
+  i{ font-size: 12px; }
+}

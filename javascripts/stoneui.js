@@ -36,6 +36,7 @@ this.stoneUI = {};
       button.onclick = function () {
         //按钮事件处理函数
         var formData = new FormData(form);
+        console.log("stone-ui formData: ", formData.getAll("image_url"));
         var formAction = form.getAttribute("action");
         var buttonAction = button.getAttribute("data-action");
         var url = null;
@@ -53,13 +54,21 @@ this.stoneUI = {};
       }
     });
   });
+
   //ajax提交函数
   function ajaxAction(formData, url) {
+    var str = "";
+    formData.forEach(function (value, key) {
+      if (key == "content") {
+        // value = encodeURIComponent(value)
+      }
+      str += ("&" + key + "=" + value);
+    });
     axios({
       method: 'POST',
       url: url,
       responseType: 'json',
-      data: formData
+      data: str
     })
       .then(function (response) {
         console.log("stone-ui ajax: ", response.data);
@@ -173,14 +182,14 @@ this.stoneUI = {};
         data: fd,
         headers: { 'content-type': 'multipart/form-data' },
       }).then(function (response) {
-        if (response.data.error == 0) {
+        if (response.data.success == true) {
           fileInput.parentNode.parentNode.querySelector('.input-hidden').value = response.data.data.thumbnail;
           fileInput.parentNode.parentNode.querySelector('.project-thumbnail img').src = response.data.data.url;
           fileInput.parentNode.parentNode.querySelector(".delete-button").style.display = 'block';
         } else {
-          myAlert.show(response.data.message, 'danger');
-          fileInput.value = "";
+          layer.open({ content: "图片上传错误: " + response.data.message, skin: 'msg', time: 2 });
         }
+        fileInput.value = null;
       });
     }
   }
@@ -205,7 +214,7 @@ this.stoneUI = {};
 
 /**
  <div class="image-item">
-     <input type="text" name="image_name[]" value="{$vo.name}" class="form-control">
+     <input type="text" name="image_title[]" value="{$vo.name}" class="form-control">
      <input type="hidden" name="image_url[]" value="{$vo.url}" class="form-control">
      <img src="{$vo.url}">
      <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>
@@ -233,19 +242,18 @@ this.stoneUI = {};
 
       axios({
         method: 'post',
-        // url: url + '?resize=true',
         url: url,
         data: fd,
         headers: { 'content-type': 'multipart/form-data' },
       }).then(function (response) {
-        if (response.data.error == 0) {
+        if (response.data.success == true) {
           var data = response.data.data;
           console.log(data);
           var image_item = '\
                 <div class="image-item">\
-                    <input type="text" name="image_name" var="" class="form-control">\
-                    <input type="hidden" name="image_url" value="'+ data.thumbnail + '" class="form-control">\
-                    <img src="'+ data.url + '">\
+                    <input type="text" name="image_title[]" var="" class="form-control">\
+                    <input type="hidden" name="image_url[]" value="'+ data.thumbnail + '" class="form-control">\
+                    <img src="'+ data.url + '" class="img-preview">\
                     <a href="javascript:;" class="btn btn-warning image-btn-update">替换</a>\
                     <a href="javascript:;" class="btn btn-danger image-btn-delete">删除</a>\
                 </div>\
@@ -256,8 +264,9 @@ this.stoneUI = {};
           var add_btn = that.parentNode.querySelector(".image-btn-add");
           add_btn.parentNode.insertBefore(ss, add_btn);
         } else {
-          console.log("图片上传错误");
+          layer.open({ content: response.data.message, skin: 'msg', time: 2 });
         }
+        fileInput.value = null;
       });
     }
   }
@@ -284,7 +293,7 @@ this.stoneUI = {};
     let fileInput = this.parentNode.parentNode.querySelector("input[name='image_input']");
     let url = fileInput.getAttribute("data-url");
 
-    let image_name = this.parentNode.querySelector('input[type="text"]');
+    let image_title = this.parentNode.querySelector('input[type="text"]');
     let image_url = this.parentNode.querySelector('input[type="hidden"]');
     let img = this.parentNode.querySelector('img');
 
@@ -301,14 +310,15 @@ this.stoneUI = {};
         data: fd,
         headers: { 'content-type': 'multipart/form-data' },
       }).then(function (response) {
-        if (response.data.error == 0) {
+        if (response.data.success == true) {
           var data = response.data.data;
           console.log(data);
           img.src = data.url;
           image_url.value = data.thumbnail;
         } else {
-          console.log("图片上传错误");
+          layer.open({ content: "图片上传错误: " + response.data.message, skin: 'msg', time: 2 });
         }
+        fileInput.value = null;
       });
     }
   }
