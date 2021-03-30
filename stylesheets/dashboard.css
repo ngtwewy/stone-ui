@@ -232,7 +232,6 @@ html {
   display: none; }
 
 .main-container {
-  height: 100%;
   min-width: 1200px;
   position: relative;
   padding: 0;
@@ -244,6 +243,10 @@ html {
   height: 100%;
   overflow: hidden;
   background-color: #1a1c35;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
   /* 左侧菜单 ------------------------------------ */ }
   .siderbar .siderbar-header {
     height: 55px;
@@ -292,6 +295,7 @@ html {
 .panel-container {
   background-color: #eeeeee;
   width: calc(100% - 180px);
+  padding-left: 180px;
   position: relative; }
   .panel-container .panel-header {
     width: 100%;
@@ -353,8 +357,6 @@ html {
           margin-left: 5px;
           margin-right: 20px; }
   .panel-container .panel-body {
-    height: calc(100% - 55px);
-    overflow-y: auto;
     position: relative; }
     .panel-container .panel-body .panel-body-container {
       padding: 0px 15px 15px 15px; }
@@ -456,10 +458,10 @@ html {
 
 .editor-container {
   width: 690px;
-  height: 390px;
   position: relative; }
 
 #editor {
+  width: 690px;
   height: 350px; }
 
 div[data-mode="link"] {
