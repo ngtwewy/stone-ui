@@ -455,10 +455,15 @@ html {
   color: #333 !important; }
 
 .editor-container {
-  width: 690px; }
+  width: 690px;
+  height: 390px;
+  position: relative; }
 
 #editor {
-  height: 380px; }
+  height: 350px; }
+
+div[data-mode="link"] {
+  left: calc(50% - 150px) !important; }
 
 td img {
   width: 25px;

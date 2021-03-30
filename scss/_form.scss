@@ -106,11 +106,18 @@ form{
 
 
 .checkbox-container{
-  height: auto;
-  width: 180px;
+  height: 380px;
+  width: 800px;
+  overflow-y: scroll;
+  background-color: #eeeeee;
+  padding: 5px 12px;
+  border-radius: 8px;
+  // display: flex;
+  // flex-wrap: wrap;
   label{
-    display: block;
-    width: 150px;
+    display: flex;
+    align-items: center;
+    // width: 150px;
     height: 30px;
     line-height: 30px;
     float: left;

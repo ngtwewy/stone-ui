@@ -461,11 +461,15 @@ form {
       margin-right: 25px; }
 
 .checkbox-container {
-  height: auto;
-  width: 180px; }
+  height: 380px;
+  width: 800px;
+  overflow-y: scroll;
+  background-color: #eeeeee;
+  padding: 5px 12px;
+  border-radius: 8px; }
   .checkbox-container label {
-    display: block;
-    width: 150px;
+    display: flex;
+    align-items: center;
     height: 30px;
     line-height: 30px;
     float: left;
@@ -579,6 +583,10 @@ form {
     margin-top: 3px; }
   .file-upload-container i {
     font-size: 12px; }
+  .file-upload-container #preview-link {
+    color: #7ba3fa;
+    display: block;
+    margin-top: 3px; }
 
 .nav-tabs {
   border-bottom: 1px solid #ddd;
@@ -633,3 +641,12 @@ form {
   position: absolute;
   object-fit: contain;
   opacity: 1.0; }
+
+.text-success, .text-danger {
+  font-size: 12px; }
+
+.text-success {
+  color: #32a11b; }
+
+.text-danger {
+  color: #e2704d; }

@@ -113,16 +113,22 @@ this.stoneUI = {};
               .then(function (response) {
                 console.log("response.data", response.data);
                 if (response.data.success == true) {
-                  layer.open({ content: response.data.message, skin: 'msg', time: response.data.seconds });
-                  setTimeout(function () {
-                    location.href = location.href;
-                  }, 2000);
+                  layer.open({
+                    content: response.data.message,
+                    skin: 'msg',
+                    time: response.data.seconds ? response.data.seconds : 2
+                  });
+                  setTimeout(function () { location.href = location.href; }, 2000);
                 } else {
-                  layer.open({ content: response.data.message, skin: 'msg', time: response.data.seconds });
+                  layer.open({
+                    content: response.data.message,
+                    skin: 'msg',
+                    time: response.data.seconds ? response.data.seconds : 2
+                  });
                 }
               })
               .catch(function (error) {
-                layer.open({ content: error, skin: 'msg' });
+                layer.open({ content: error, skin: 'msg', time: 2 });
               });
             layer.close(index);
           }

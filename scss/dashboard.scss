@@ -326,9 +326,16 @@ $center-right: 390px;
 
 .editor-container {
   width: 690px;
+  height: 390px;
+  position: relative;
 }
 #editor{
-  height: 380px;
+//   width: 690px;
+  height: 350px;
+//   position: relative;
+}
+div[data-mode="link"]{
+  left: calc(50% - 150px)!important;
 }
 
 //

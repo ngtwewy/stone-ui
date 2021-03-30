@@ -79,7 +79,7 @@
 }
 
 //
-// 多图片上传
+// 文件上传 OSS。 要加上进度条
 // --------------------------------------------------
 .file-upload-container {
   display: flex;
@@ -94,4 +94,9 @@
     margin-top: 3px;
   }
   i{ font-size: 12px; }
+  #preview-link{
+    color: #7ba3fa;
+    display: block;
+    margin-top: 3px;
+  }
 }
